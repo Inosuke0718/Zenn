@@ -1,5 +1,5 @@
 ---
-title: "エラーIndexError: index 1 is out of bounds for dimension 1 with size 1の解決方法" 
+title: "エラーIndexError: index 1 is out of bounds for dimension 1 with size 1の解決方法"
 emoji: "😸" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: [] # タグ。["markdown", "rust", "aws"]のように指定する
@@ -27,3 +27,6 @@ names: ['surfer']
 
 
 その後、labels.cacheを削除し、再実行すればエラー解決！
+
+## 参考
+https://github.com/ultralytics/ultralytics/issues/472
