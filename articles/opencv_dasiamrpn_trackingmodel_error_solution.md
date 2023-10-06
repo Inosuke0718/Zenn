@@ -1,5 +1,5 @@
 ---
-title: "OpenCVのTrackingモデルDaSiamRPNの読み込みエラーCan't read ONNX file: dasiamrpn_model.onnxの解決方法"
+title: "DaSiamRPNの読み込みエラーCan't read ONNX file: dasiamrpn_model.onnxの解決方法"
 emoji: "😸" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["OpenCV", "Android Studio", "java"] # タグ。["markdown", "rust", "aws"]のように指定する
