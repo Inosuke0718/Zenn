@@ -1,3 +1,19 @@
+---
+title: "next.js学習"
+emoji: "😘" # アイキャッチとして使われる絵文字（1文字だけ）
+type: "tech" # tech: 技術記事 / idea: アイデア記事
+topics: ["NextAuth.js", "Next.js"] # タグ。["markdown", "rust", "aws"]のように指定する
+published: false # 公開設定（falseにすると下書き）
+---
+
+## passwordのハッシュ化
+```
+function hashPassword(password: string) {
+    const saltRounds = 10; // ソルトの長さ
+    return bcrypt.hash(password, 10);
+}
+```
+
 ## Expressパッケージ
 サーバーフレームワークの一つでにカスタムサーバーを構築できる
 サーバーサイドレンダリング（SSR）、静的サイト生成（SSG）、APIルートなどを提供する
