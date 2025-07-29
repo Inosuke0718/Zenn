@@ -21,7 +21,7 @@ https://github.com/Inosuke0718/todo_demo
 
 以下が今回作成する TODO アプリの動作デモです：
 
-![TODO アプリのデモ](6432c2037316277b0f47c0137e2a1e5b.gif)
+![TODO アプリのデモ](spring_boot_todo.png)
 
 ## 技術スタック
 
