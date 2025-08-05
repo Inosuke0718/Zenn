@@ -2,7 +2,7 @@
 title: "【完全ガイド】夜間にAIがIssueを自動実装するGitHub Actions＋Claude Code活用法"
 emoji: "🤖"
 type: "tech"
-topics: ["github", "githubactions", "ai", "claude", "automation"]
+topics: ["claude code", "github actions", "github", "githubactions", "ai", "claude", "automation"]
 published: true
 ---
 
