@@ -19,7 +19,7 @@ published: true
 ## 2. 全体フロー
 
 1. GitHub Issues に`@claude`メンションとともに実装してほしい内容を記載して投稿
-2. GitHub Actions が“夜間”を判定し定期実行
+2. GitHub Actions が"夜間"を判定し定期実行
 3. 未処理 Issue を優先度順（high→middle→low）に検索
 4. Claude Code Action がコメントを検知し、実装 →PR 作成
 
@@ -108,8 +108,9 @@ jobs:
 ## 7. まとめ
 
 夜間の定期トリガー ×Claude Code で、眠っている間に Issue を次々と解決。
-朝はレビューだけで OK な、まさに“寝ている間も動く開発チーム”を実現しましょう。
+朝はレビューだけで OK な、まさに"寝ている間も動く開発チーム"を実現しましょう。
 
 ## 8. 参考文献
 
 - [GitHub Actions で Claude 3.5 Sonnet を使ったコード生成の自動化](https://zenn.dev/r_kaga/articles/731fe4636289dc) - r_kaga
+- [Claude Code GitHub Actions - Anthropic](https://docs.anthropic.com/ja/docs/claude-code/github-actions)
