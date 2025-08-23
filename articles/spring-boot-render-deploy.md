@@ -205,7 +205,7 @@ git push origin [ブランチ名]
 /actuator/health
 ```
 
-![alt text](<https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/FireShot%20Capture%20019%20-%20Render%20Dashboard%20-%20%5Bdashboard.render.com%5D.png?raw=true>)
+![alt text](https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/FireShot%20Capture%20019%20-%20Render%20Dashboard%20-%20%5Bdashboard.render.com%5D.png?raw=true)
 
 ### 6. デプロイ実行
 
@@ -222,6 +222,8 @@ git push origin [ブランチ名]
 ```
 https://[サービス名].onrender.com
 ```
+
+### ちょっと長いけど、設定時の画像はこんな感じ
 
 ![alt text](https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/image-4.png?raw=true)
 
