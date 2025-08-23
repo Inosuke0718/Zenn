@@ -166,13 +166,13 @@ git push origin [ブランチ名]
 
 1. [Render.com](https://render.com)にログイン
 2. ダッシュボードで「New +」をクリック
-   ![alt text](image-1.png)
+   ![alt text](https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/image-1.png?raw=true)
 3. 「Web Service」を選択
-   ![alt text](image-2.png)
+   ![alt text](https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/image-2.png?raw=true)
 4. 「Build and deploy from a Git repository」を選択
 5. GitHub アカウントを接続（初回のみ）
 6. 対象のリポジトリを選択
-   ![alt text](image-3.png)
+   ![alt text](https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/image-3.png?raw=true)
 
 ### 3. サービス設定
 
@@ -205,7 +205,7 @@ git push origin [ブランチ名]
 /actuator/health
 ```
 
-![alt text](<FireShot Capture 019 - Render Dashboard - [dashboard.render.com].png>)
+![alt text](<https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/FireShot%20Capture%20019%20-%20Render%20Dashboard%20-%20%5Bdashboard.render.com%5D.png?raw=true>)
 
 ### 6. デプロイ実行
 
@@ -223,7 +223,7 @@ git push origin [ブランチ名]
 https://[サービス名].onrender.com
 ```
 
-![alt text](image-4.png)
+![alt text](https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/image-4.png?raw=true)
 
 ### 動作確認
 
