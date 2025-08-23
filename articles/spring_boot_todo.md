@@ -189,8 +189,31 @@ cd todo_demo
 
 3. ブラウザで `http://localhost:8080` にアクセス
 
-## 次のステップ(気が向いたらここも解説します～)
+## 次のステップ
+
+### 🚀 アプリをインターネットに公開しよう！
+
+作成した TODO アプリをインターネット上に公開して、どこからでもアクセスできるようにしませんか？
+
+次の記事では、この TODO アプリを **Render.com** を使って **完全無料** でデプロイする方法を詳しく解説しています：
+
+:::message
+**🚀 続編記事**: [【無料】Spring Boot TODO アプリを Render.com にデプロイする完全ガイド](https://zenn.dev/your-username/articles/render-deploy-guide)
+
+- Docker を使ったコンテナ化
+- 無料でのクラウドデプロイ
+- 本番環境用の設定
+- ヘルスチェック機能の実装
+
+すべて無料で、5-10 分程度でデプロイ完了します！
+:::
+
+### その他の拡張アイデア
 
 - データベース（H2、MySQL など）を使用したバージョンへの拡張
 - REST API の実装
 - ユーザー認証機能の追加
+
+## 関連記事
+
+https://zenn.dev/your-username/articles/render-deploy-guide
