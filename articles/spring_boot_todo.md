@@ -198,7 +198,7 @@ cd todo_demo
 次の記事では、この TODO アプリを **Render.com** を使って **完全無料** でデプロイする方法を詳しく解説しています：
 
 :::message
-**🚀 続編記事**: [【無料】Spring Boot TODO アプリを Render.com にデプロイする完全ガイド](https://zenn.dev/your-username/articles/render-deploy-guide)
+**🚀 続編記事**: [【無料】Spring Boot TODO アプリを Render.com にデプロイする完全ガイド](https://zenn.dev/your-username/articles/spring-boot-render-deploy)
 
 - Docker を使ったコンテナ化
 - 無料でのクラウドデプロイ
@@ -216,4 +216,4 @@ cd todo_demo
 
 ## 関連記事
 
-https://zenn.dev/your-username/articles/render-deploy-guide
+https://zenn.dev/your-username/articles/spring-boot-render-deploy
