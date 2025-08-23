@@ -22,13 +22,20 @@ published: true
 - Render.com アカウント（無料プランで OK）
 - プロジェクトが GitHub リポジトリにプッシュされている
 
-:::message alert
-**💡 ヒント**: 前回作成した TODO アプリのコードは [こちらのリポジトリ](https://github.com/Inosuke0718/todo_demo) からも取得できます。
+:::message
+
+**🚀 今回のデプロイ用コード**: [feature/render-deployment ブランチ](https://github.com/Inosuke0718/todo_demo/tree/feature/render-deployment) に今回のデプロイに必要なファイル（Dockerfile、設定ファイルなど）がすべて含まれています。
 :::
 
 ## 必要なファイル
 
-デプロイに必要なファイルが揃っていることを確認してください：
+デプロイに必要なファイルが揃っていることを確認してください。
+
+:::message
+**📁 完全なコード**: すべてのファイルは [feature/render-deployment ブランチ](https://github.com/Inosuke0718/todo_demo/tree/feature/render-deployment) で確認できます。
+:::
+
+以下、各ファイルの詳細を説明します：
 
 ### ファイル構成
 
