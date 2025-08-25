@@ -11,7 +11,7 @@ published: true
 このガイドでは、前回の記事で作成した Spring Boot TODO アプリケーションを Render.com にデプロイする手順を説明します。
 
 :::message
-**📚 前提記事**: [Spring Boot + LocalStorage で作る TODO アプリ完全ガイド](https://zenn.dev/your-username/articles/spring-boot-todo)  
+**📚 前提記事**: [Spring Boot + LocalStorage で作る TODO アプリ完全ガイド](https://zenn.dev/your-username/articles/spring_boot_todo)  
 まだ TODO アプリを作成していない方は、上記の記事を参考にアプリケーションを作成してください。
 :::
 
