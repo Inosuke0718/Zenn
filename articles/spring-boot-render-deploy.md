@@ -91,7 +91,6 @@ published: true
 - Maven 依存関係とビルド設定
 - Spring Boot Actuator を含む必要な依存関係を定義
 
-
 #### 4. application.properties
 
 **パス**: `src/main/resources/application.properties`
@@ -211,18 +210,6 @@ https://[サービス名].onrender.com
 ### 設定の全体キャプチャはこんな感じ
 
 ![alt text](https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/FireShot%20Capture%20019%20-%20Render%20Dashboard%20-%20%5Bdashboard.render.com%5D.png?raw=true)
-
-### 動作確認
-
-デプロイされたアプリケーションで以下の機能が正常に動作することを確認してください：
-
-1. **TODO の追加**: 新しいタスクを追加できる
-2. **TODO の編集**: 既存のタスクを編集できる
-3. **TODO の削除**: 不要なタスクを削除できる
-4. **完了状態の切り替え**: チェックボックスで完了/未完了を切り替えられる
-5. **データの永続化**: ページをリロードしても LocalStorage のデータが保持される
-
-これで、前回作成した TODO アプリが無料でインターネット上に公開されました！🎉
 
 ## まとめ
 
