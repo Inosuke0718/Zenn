@@ -197,6 +197,8 @@ git push origin [ブランチ名]
 | `SPRING_PROFILES_ACTIVE` | `prod`              | プロダクションプロファイルを有効化 |
 | `JAVA_OPTS`              | `-Xmx512m -Xms256m` | JVM メモリ設定                     |
 
+![alt text](https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/image-5.png?raw=true)
+
 ### 5. ヘルスチェック設定
 
 「Health Check Path」に以下を設定：
@@ -204,8 +206,6 @@ git push origin [ブランチ名]
 ```
 /actuator/health
 ```
-
-![alt text](https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/FireShot%20Capture%20019%20-%20Render%20Dashboard%20-%20%5Bdashboard.render.com%5D.png?raw=true)
 
 ### 6. デプロイ実行
 
@@ -223,9 +223,11 @@ git push origin [ブランチ名]
 https://[サービス名].onrender.com
 ```
 
-### ちょっと長いけど、設定時の画像はこんな感じ
-
 ![alt text](https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/image-4.png?raw=true)
+
+### 設定の全体キャプチャはこんな感じ
+
+![alt text](https://github.com/Inosuke0718/todo_demo/blob/feature/render-deployment/FireShot%20Capture%20019%20-%20Render%20Dashboard%20-%20%5Bdashboard.render.com%5D.png?raw=true)
 
 ### 動作確認
 
@@ -242,20 +244,6 @@ https://[サービス名].onrender.com
 ## まとめ
 
 この記事では、Spring Boot TODO アプリを Render.com にデプロイする方法を解説しました。
-
-### 今回学んだこと
-
-- Docker を使用したコンテナ化
-- Render.com での無料デプロイ
-- 本番環境用の設定ファイル作成
-- ヘルスチェック機能の実装
-
-### 次のステップ
-
-- カスタムドメインの設定
-- データベース（PostgreSQL）の追加
-- CI/CD パイプラインの構築
-- パフォーマンス監視の導入
 
 ## 関連記事
 
