@@ -172,6 +172,11 @@ src/main/resources/
 - **Templates**: HTML ページのテンプレート
 - **Static**: CSS、JavaScript、画像などの静的ファイル
 
+### そもそもSpring Bootとは？
+
+このYoutube解説が分かりやすいかと思います。こちらをご覧ください。
+https://www.youtube.com/watch?v=8UERVg5c_HM
+
 ### 実行方法
 
 1. リポジトリをクローン：
