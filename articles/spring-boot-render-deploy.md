@@ -10,6 +10,12 @@ published: true
 
 このガイドでは、前回の記事で作成した Spring Boot TODO アプリケーションを Render.com にデプロイする手順を説明します。
 
+:::message alert
+**🎉 実際にデプロイしたデモサイト**  
+この記事の手順で実際にデプロイした TODO アプリがこちらです：  
+**https://todo-demo-3lld.onrender.com/**
+:::
+
 :::message
 **📚 前提記事**: [Spring Boot + LocalStorage で作る TODO アプリ完全ガイド](https://zenn.dev/your-username/articles/spring_boot_todo)  
 まだ TODO アプリを作成していない方は、上記の記事を参考にアプリケーションを作成してください。
@@ -51,17 +57,15 @@ published: true
 #### 1. Dockerfile
 
 **パス**: `プロジェクトルート/Dockerfile`
+**なぜ Dockerfile が必要なのか？**
+
+- 簡単に言うと: あなたのパソコンで動くアプリを、インターネット上でも確実に動かすためです。
+
 **役割**:
 
 - Docker コンテナのビルド手順を定義
 - Multi-stage build でビルドと実行環境を分離
 - セキュリティ向上のため非 root ユーザーで実行
-
-**重要なポイント**:
-
-- `eclipse-temurin:17-jre-alpine`を使用（軽量で安全）
-- Maven 依存関係のキャッシュ最適化
-- ポート設定は環境変数`PORT`に対応
 
 #### 2. .dockerignore
 
@@ -87,14 +91,6 @@ published: true
 - Maven 依存関係とビルド設定
 - Spring Boot Actuator を含む必要な依存関係を定義
 
-**重要な依存関係**:
-
-```xml
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-actuator</artifactId>
-</dependency>
-```
 
 #### 4. application.properties
 
@@ -136,19 +132,6 @@ published: true
 
 - 実行権限が必要（`chmod +x ./mvnw`）
 - `.mvn/`ディレクトリも必要
-
-### ファイルの依存関係
-
-```mermaid
-graph TD
-    A[Dockerfile] --> B[mvnw]
-    A --> C[pom.xml]
-    A --> D[src/]
-    C --> E[spring-boot-starter-actuator]
-    D --> F[application.properties]
-    D --> G[application-prod.properties]
-    H[.dockerignore] --> A
-```
 
 ## デプロイ手順
 
@@ -244,6 +227,11 @@ https://[サービス名].onrender.com
 ## まとめ
 
 この記事では、Spring Boot TODO アプリを Render.com にデプロイする方法を解説しました。
+
+**ポイント**:
+
+- Docker を使うことで環境の違いによるトラブルを回避
+- Render.com の無料プランで本格的な Web アプリケーションを公開可能
 
 ## 関連記事
 
