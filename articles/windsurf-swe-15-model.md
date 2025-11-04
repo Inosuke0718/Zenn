@@ -1,5 +1,5 @@
 ---
-title: "Windsurfの新モデル『SWE-1.5』が革命的すぎる - 毎秒950トークンの圧倒的速度でコーディングが変わる"
+title: "【毎秒950トークンの暴力】Windsurfの新モデル『SWE-1.5』の紹介"
 emoji: "⚡"
 type: "tech"
 topics: ["AI", "Windsurf", "LLM", "開発効率化", "コーディング"]
