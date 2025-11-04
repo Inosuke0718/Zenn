@@ -13,6 +13,8 @@ AI 開発プラットフォーム**Windsurf**に、開発者の世界を変え�
 
 コーディングの速度と質を両立させたこのモデルは、まさに開発フローを根本から変えるゲームチェンジャーです。
 
+[Windsurf - The best AI for Coding](https://windsurf.com/)
+
 ## Windsurf の新モデル『SWE-1.5』とは？
 
 『SWE-1.5』は、あの伝説的な AI エージェント「Devin」を開発した**Cognition チーム**が Windsurf に統合した新しい LLM（大規模言語モデル）です。
