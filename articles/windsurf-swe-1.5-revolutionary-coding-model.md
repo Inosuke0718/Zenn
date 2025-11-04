@@ -4,6 +4,7 @@ emoji: "⚡"
 type: "tech"
 topics: ["AI", "Windsurf", "LLM", "開発効率化", "コーディング"]
 published: true
+slug: "windsurf-swe-15-revolutionary-coding-model"
 ---
 
 ## はじめに
