@@ -1,4 +1,11 @@
-# Zenn 用ポートフォリオ作成ガイド完全版
+---
+title: "【2025年版】AI時代のポートフォリオ作成完全ポイント"
+emoji: "📚"
+type: "tech"
+topics: ["ポートフォリオ", "初心者", "AI", "就職活動", "プログラミング"]
+published: true
+slug: "zenn-portfolio-creation-guide-complete"
+---
 
 ## はじめに
 
@@ -40,50 +47,48 @@
 
 **オリジナリティの出し方**
 
-チュートリアルベースでも構いませんが、以下のような＋ α の工夫を加えましょう
+チュートリアルベースでも構いませんが、以下のような+α の工夫を加えましょう
 
 - 独自の機能追加（通知機能、検索機能など）
 - UI の改善（レスポンシブデザイン、アニメーション）
 - 実用性の向上（実際に使える状態にする）
 
-例：何万回も作成されつくしたTODOアプリであれば、LINEやSlackの連携機能やAIチャットBotを作る等
+例：何万回も作り尽くされた TODO アプリであれば、LINE や Slack の連携機能や AI チャット Bot を作る等
 
 ### 技術スタック選定
 
-技術選定はポートフォリオ制作において非常に重要な項目です。以下の基準で選びましょう。[1]
+技術選定はポートフォリオ制作において非常に重要な項目です。以下の基準で選びましょう。
 
 **推奨フレームワーク**
 
-**PHP：[Laravel](https://laravel.com/)**
-
-- ドキュメントが豊富で日本語情報も多い
-- 求人需要が高く、学習コストも比較的低い
-- チュートリアルが充実しており初心者にも優しい
-
-**Python：[Django](https://www.djangoproject.com/) / [Flask](https://flask.palletsprojects.com/)**
+**Python: [Django](https://www.djangoproject.com/) / [Flask](https://flask.palletsprojects.com/)**
 
 - Django は機能が豊富で大規模開発向き
 - Flask は軽量でシンプル、学習コストが低い
 - データ分析や AI 関連の開発にも応用可能
 
-**Java：[Spring Boot](https://spring.io/projects/spring-boot)**
+**Java: [Spring Boot](https://spring.io/projects/spring-boot)**
 
 - エンタープライズ領域で需要が高い
 - 情報量は Laravel や Django より少なめ
-- Java を学んでいれば、PHP や Python への移行も容易
 
-**JavaScript/TypeScript：[Next.js](https://nextjs.org/)**
+**PHP: [Laravel](https://laravel.com/)**
+
+- ドキュメントが豊富で日本語情報も多い
+- 求人需要が高く、学習コストも比較的低い
+- チュートリアルが充実しており初心者にも優しい
+
+**JavaScript/TypeScript: [Next.js](https://nextjs.org/)**
 
 - フロントエンドエンジニア志望者に最適
 - サーバーサイドレンダリング（SSR）の実装が可能
-- React の知識が活かせる
 
 :::message
 **技術選定のポイント**
 
 - 学習コストと開発効率のバランス
 - 求人市場での需要
-- やりたいことと技術の得意分野の一致[1]
+- やりたいことと技術の得意分野の一致
 - ライブラリの豊富さ
 - コスト（無料で使えるか）
   :::
@@ -96,49 +101,41 @@
 
 ## 2. 🛠 開発フェーズ
 
-### AI Editor を活用しよう
+### AI IDE(Editor) を活用しよう
 
 現代の開発では、AI ツールの活用が効率化の鍵です。以下のツールから自分に合ったものを選びましょう。
 
 **主要な AI Editor**
 
-- **[Cursor](https://cursor.com/ja)**：VS Code ベースで使いやすく、日本語対応も充実
-- **[Kiro](https://kiro.dev/)**：プロトタイプから本番環境まで対応
-- **[Windsurf](https://windsurf.com/)**：高機能なコード補完機能
+- **[Cursor](https://cursor.com/ja)**: AI IDE の現王者
+- **[Kiro](https://kiro.dev/)**: AWS(Amazon)が本気で開発。SPEC 開発が便利
+- **[Windsurf](https://windsurf.com/)**: 爆速 LLM SWE-1.5 が魅力
 
 **ターミナル型 AI ツール**
 
 AI Editor に慣れてきたら、ターミナルから AI を活用できるツールも試してみましょう：
 
-- **[Claude Code](https://docs.anthropic.com/ja/docs/claude-code/overview)**：コマンドラインから Claude を利用
-- **[Gemini CLI](https://github.com/google-gemini/gemini-cli)**：Google 製の CLI ツール
+- **[Claude Code](https://docs.anthropic.com/ja/docs/claude-code/overview)**: コマンドラインから Claude を利用
+- **[Gemini CLI](https://github.com/google-gemini/gemini-cli)**: Google 製の CLI ツール
 
 :::message alert
 **AI 活用時の重要な注意点**
 
-AI ツールは強力ですが、使い方を誤ると学習効果が薄れます。以下の点に注意しましょう：[5][6]
+AI ツールは強力ですが、使い方を誤ると学習効果が薄れます。以下の点に注意しましょう：
 
 **避けるべき使い方**
 
-- AI が生成したコードをそのままコピペする[5]
-- エラーメッセージを読まずに AI に丸投げする[6]
-- 基礎文法の学習を AI に頼りきる[6]
+- AI の回答を理解しない
+- エラーメッセージを読まずに AI に丸投げする
 
-**推奨される使い方**
-
-1. まず自分で考える（10〜15 分）[6]
-2. 公式ドキュメントや検索エンジンで調べる
-3. それでも解決しない場合に AI に聞く
-4. AI の回答を必ず検証・理解する[6]
-
-**AI の回答に対して「なぜこのコードになるのか？」を常に問い直す習慣**をつけましょう。プログラミングは試行錯誤しながら学ぶプロセスが重要です。[5]
+**AI の回答に対して「なぜこのコードになるのか？」を常に問い直す習慣**をつけましょう。プログラミングは試行錯誤しながら学ぶプロセスが重要です。
 :::
 
 ### チュートリアルで基礎を固めよう
 
 初めて触るフレームワークなら、開発前にチュートリアルで基礎を学びましょう。
 
-公式チュートリアルも有用ですが、**動画での解説がおすすめ**です。YouTube で「Spring Boot チュートリアル」「Django チュートリアル」などと検索し、実際に手を動かしながら一つアプリを作成してみましょう。
+公式チュートリアルも有用ですが、**動画での解説がおすすめ**です。YouTube で「Spring Boot チュートリアル」「Django アプリ」などと検索し、実際に手を動かしながら一つアプリを作成してみましょう。
 
 動画学習のメリット：
 
@@ -154,8 +151,8 @@ AI ツールは強力ですが、使い方を誤ると学習効果が薄れま�
 
 エディタに搭載されている Git 管理機能を使うのがおすすめです：
 
-- **[VS Code](https://code.visualstudio.com/)**：無料で高機能
-- **[Cursor](https://www.cursor.com/ja)**：AI 機能付き
+- **[VS Code](https://code.visualstudio.com/)**: 無料で高機能
+- **[Cursor](https://www.cursor.com/ja)**: AI 機能付き
 
 コマンドラインでの操作に不安がある方は、まず GUI ツールから始めましょう。
 
@@ -171,14 +168,16 @@ AI ツールは強力ですが、使い方を誤ると学習効果が薄れま�
 
 **初心者におすすめのサービス**
 
-- **[Render](https://render.com/)**：無料プランあり、多言語対応、設定が簡単
-- **[Heroku](https://www.heroku.com/)**：老舗の PaaS サービス、豊富なドキュメント
+- **[Render](https://render.com/)**: 無料プランあり、多言語対応、設定が簡単
+- **[Heroku](https://www.heroku.com/)**: 老舗の PaaS サービス、豊富なドキュメント
 
 これらのサービスは、GitHub リポジトリと連携するだけで自動デプロイが可能です。
 
-### README を整備しよう
+### GitHub の README を整備しよう
 
-**企業の採用担当者がまず見るのは README**です。以下の項目を含めた丁寧な README を作成しましょう。[7]
+理由としては、初学者が企業に自分の作成したアプリを見てもらうには Github の URL を送付するのが一般的です。そうすることでソースコードと一緒に README でアプリの概要や URL を共有することができます。
+
+**企業の採用担当者がまず見るのは README**です。以下の項目を含めた丁寧な README を作成しましょう。
 
 **必須記載項目**
 
@@ -234,7 +233,7 @@ AI ツールは強力ですが、使い方を誤ると学習効果が薄れま�
 ![アプリケーションのデモ](demo.gif)
 ```
 
-**README を魅力的にするコツ**[7]
+**README を魅力的にするコツ**
 
 - スクリーンショットや GIF アニメーションを含める
 - 技術選定の理由を簡潔に説明する
@@ -249,15 +248,15 @@ AI ツールは強力ですが、使い方を誤ると学習効果が薄れま�
 
 **個人の強みを活かす**
 
-絵が得意なら視覚的に美しいサイト、問題解決能力をアピールしたいなら実務的な課題を解決するアプリを作りましょう。[7]
+絵が得意なら視覚的に美しいサイト、問題解決能力をアピールしたいなら実務的な課題を解決するアプリを作りましょう。
 
 **技術スタックの幅を見せる**
 
-フロントエンド、バックエンド、データベース操作を含む、フルスタックなアプリケーションが理想的です。[7]
+フロントエンド、バックエンド、データベース操作を含む、フルスタックなアプリケーションが理想的です。
 
 **実用性を重視**
 
-実際に使える機能を持つアプリケーションは高評価につながります。自分自身や周囲の人が本当に使いたくなるものを目指しましょう。[7]
+実際に使える機能を持つアプリケーションは高評価につながります。自分自身や周囲の人が本当に使いたくなるものを目指しましょう。
 
 ### Q2. 企業にどう見せる？
 
@@ -314,62 +313,24 @@ YouTube などの動画付きチュートリアルがおすすめです。フレ
 
 ### Q7. AI に頼りすぎないか不安…
 
-適切な使い方を心がければ問題ありません：[5][6]
+適切な使い方を心がければ問題ありません：
 
 **理解して使う**
 
 - AI が生成したコードを一行ずつ理解する
-- 「なぜこのコードになるのか」を常に問い直す[5]
+- 「なぜこのコードになるのか」を常に問い直す
 
 **基礎学習と併用**
 
-- HTML/CSS の基本構造、JavaScript の基礎文法は自分で学ぶ[6]
-- エラーメッセージは自分で読む習慣をつける[6]
+- HTML/CSS の基本構造、JavaScript の基礎文法は自分で学ぶ
+- エラーメッセージは自分で読む習慣をつける
 
 **検証を忘れない**
 
-- AI の回答を鵜呑みにせず、公式ドキュメントで確認する[6]
-- まず自分で 10〜15 分考えてから AI に頼る[6]
+- AI の回答を鵜呑みにせず、公式ドキュメントで確認する
+- まず自分で 10〜15 分考えてから AI に頼る
 
-### Q8. ポートフォリオサイトの構成例は？
-
-**参考例**：[https://ti-portfolio-eight.vercel.app/projects](https://ti-portfolio-eight.vercel.app/projects)
-
-**理想的な基本構成**
-
-1. **ヒーローセクション**
-
-   - キャッチコピー
-   - 簡潔な自己紹介
-   - 印象的なビジュアル
-
-2. **About セクション**
-
-   - 詳細な経歴
-   - 保有スキル
-   - 学習姿勢や価値観
-
-3. **Works/Projects セクション**
-
-   - 制作物の一覧
-   - 各作品の概要と技術スタック
-   - デモサイトや GitHub リンク
-
-4. **Skills セクション**
-
-   - 使用できる技術の一覧
-   - レベル感を示す（得意・普通・学習中など）
-
-5. **Contact セクション**
-   - SNS リンク
-   - メールアドレス
-   - GitHub プロフィール
-
-:::message
-**注意**：上記はあくまで理想形です。すべてを完璧に揃える必要はありません。まずは**Works セクション**と**README の充実**に注力しましょう。
-:::
-
-### Q9. 設計書は必要？
+### Q8. 設計書は必要？
 
 **必須ではありません**。
 
@@ -382,56 +343,10 @@ YouTube などの動画付きチュートリアルがおすすめです。フレ
 - 使用技術とその選定理由
 - データベース設計（ER 図など）
 
+### Q9. 全くの初学者がポートフォリオを作成するタイミングは？
+
+おすすめはプログラミング基礎の勉強が終わってからです。
+正直今は AI が発達しているので全くの初心者でもアプリを作成できてしまいます。
+しかし基礎を勉強していないと AI に書かせたコードも理解できないので、基礎が終わった段階から AI を使いながらアプリを作成することをお勧めしています。
+
 ---
-
-## まとめ
-
-ポートフォリオ作成は、以下の 3 つのフェーズで進めます：
-
-1. **企画・設計**：強みを活かしたテーマ選定と技術スタックの決定
-2. **開発**：AI ツールを適切に活用しながら、理解を深める開発
-3. **公開**：デプロイと README の整備で、作品を魅力的に見せる
-
-**重要なポイント**
-
-- ポートフォリオは必須ではないが、特に未経験者には強力な武器[2][1]
-- AI ツールは便利だが、必ず内容を理解して使う[5][6]
-- 未完成でも丁寧な README があれば評価される
-- 完璧を目指さず、まず小さく始めて徐々に改善していく
-
-あなたのポートフォリオが、理想のキャリアへの第一歩となることを願っています。まずは小さなチュートリアルから始めて、少しずつステップアップしていきましょう！
-
-[1](https://jido-ka.com/importance-of-portfolio/)
-[2](https://www.kotora.jp/c/78646-2/)
-[3](https://career.levtech.jp/guide/knowhow/article/61012/)
-[4](https://evangelists.blog/2024/12/02/it%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA%E4%BD%9C%E6%88%90%E3%82%AC%E3%82%A4%E3%83%89/)
-[5](https://note.com/mina_3_73/n/n468ab9f9c06e)
-[6](https://learning-tech.jp/posts/ai-coding.php)
-[7](https://career.levtech.jp/guide/knowhow/article/61016/)
-[8](https://zenn.dev/kagan/articles/tech-blog-techniques)
-[9](https://applis.io/posts/points-when-writing-technical-article)
-[10](https://note.com/ready_shark550/n/n4417d1248832)
-[11](https://offers.jp/media/programming/a_4617)
-[12](https://zenn.dev/akuad/articles/my-article-writing)
-[13](https://zenn.dev/narita1980/articles/69c498ec3892a6)
-[14](https://note.com/hideaki_ksm/n/n7f25e1890ea0)
-[15](https://zenn.dev/sompojapan_dx/articles/a76c614a232dee)
-[16](https://www.geekly.co.jp/column/cat-jobsearch/document/front-end_engineer_portfolio/)
-[17](https://qiita.com/MinoDriven/items/6718b5e70e3fb321ff9b)
-[18](https://zenn.dev/meijin/articles/tech-article-output-recommend)
-[19](https://raretech.site/blog/programing_school_portfolio)
-[20](https://syu-m-5151.hatenablog.com/entry/2025/03/31/034420)
-[21](https://zenn.dev/lollipop_onl/scraps/31ae925a4a9c0e)
-[22](https://www.sky-career.jp/media/article/579/)
-[23](https://writing.techport.co.jp/archives/21916/)
-[24](https://zenn.dev/collabostyle/articles/858875b235cdd6)
-[25](https://master-key.co.jp/media/engineer-portfolio-examples/)
-[26](https://jitera.com/ja/insights/33789)
-[27](https://sks.ac.jp/blog/column_-generative-ai-possible-impossible/)
-[28](https://qiita.com/jnchito/items/da33f793de2e29e470f4)
-[29](https://www.cloud-contactcenter.jp/blog/points-to-keep-in-mind-of-generative-ai.html)
-[30](https://www.dsk-cloud.com/blog/gc/6-disadvantages-to-be-aware-of-with-generation-ai)
-[31](https://ai-keiei.shift-ai.co.jp/ai-programming-problem/)
-[32](https://growi.cloud/blog/5787)
-[33](https://note.com/taishi_wii_be/n/n5263a721f9c5)
-[34](https://soken.signate.jp/column/how-to-use-generative-ai)
