@@ -3,7 +3,7 @@ title: "【Firebase】初心者でも分かるCustom Claims入門：サーバー
 emoji: "🛡️"
 type: "tech"
 topics: ["firebase", "authentication", "javascript", "初心者"]
-published: false
+published: true
 ---
 
 # 【Firebase】初心者でも分かるCustom Claims入門：サーバーで付与してクライアントで活用する権限管理
