@@ -12,7 +12,7 @@ published: true
 
 今回は、主要な命名規則（キャメル、スネーク、ケバブ）の特徴と、どの言語で何が採用されているかの決定版まとめを作成しました。
 
-## 3大ケースの基本をおさらい
+## 3 大ケースの基本をおさらい
 
 まずは基本の「形」と「主な生息地」を整理します。
 
@@ -20,21 +20,21 @@ published: true
 
 単語の先頭を大文字にして繋げる記法です。ラクダのコブのように見えることからこう呼ばれます。
 
-実は2種類あります。
+実は 2 種類あります。
 
 **ローワーキャメル (Lower Camel Case)**
 
 先頭は小文字、続く単語の先頭は大文字。
 
 - 例: `userProfile`, `createdAt`, `getElementById`
-- 主な用途: JavaScript, Java, Goなどの変数名・関数名。
+- 主な用途: JavaScript, Java, Go などの変数名・関数名。
 
 **アッパーキャメル (Upper Camel Case) / パスカルケース (Pascal Case)**
 
 先頭も大文字。
 
 - 例: `UserProfile`, `ReactComponent`, `CustomerService`
-- 主な用途: クラス名、型定義、Reactコンポーネント名。
+- 主な用途: クラス名、型定義、React コンポーネント名。
 
 ### 🐍 スネークケース (Snake Case)
 
@@ -43,7 +43,7 @@ published: true
 **基本のスネーク**: すべて小文字。
 
 - 例: `user_profile`, `created_at`, `get_element`
-- 主な用途: Python全般、SQLの列名、Rustの変数名。
+- 主な用途: Python 全般、SQL の列名、Rust の変数名。
 
 **スクリーミングスネーク (Screaming Snake)**: すべて大文字。
 
@@ -55,7 +55,7 @@ published: true
 単語をハイフン（`-`）で繋ぐ記法です。串刺しのケバブに見えるためです。一部ではチェインケースとも呼ばれます。
 
 - 例: `user-profile`, `font-size`, `main-content`
-- 主な用途: URL、HTMLのクラス名・ID、CSSプロパティ、npmパッケージ名。
+- 主な用途: URL、HTML のクラス名・ID、CSS プロパティ、npm パッケージ名。
 
 **注意**: 多くのプログラミング言語ではハイフンが「マイナス（引き算）」と解釈されるため、変数名には使えません。
 
@@ -65,30 +65,33 @@ published: true
 
 これさえ覚えておけば、大抵の現場で通用します。
 
-| 言語 / 技術 | 変数・関数 | クラス・型 | 定数 | ファイル名 |
-|------------|-----------|-----------|------|-----------|
-| JavaScript / TypeScript | 🐪 lowerCamel | 🐫 Pascal | 🗣 SCREAMING | 🍢 kebab (推奨)<br>🐫 Pascal (React) |
-| Python | 🐍 snake | 🐫 Pascal | 🗣 SCREAMING | 🐍 snake |
-| Java / C# | 🐪 lowerCamel | 🐫 Pascal | 🗣 SCREAMING | 🐫 Pascal |
-| Go | 🐪 lowerCamel | 🐫 Pascal | 🐫 Pascal (※1) | 🐍 snake |
-| Ruby | 🐍 snake | 🐫 Pascal | 🗣 SCREAMING | 🐍 snake |
-| Rust | 🐍 snake | 🐫 Pascal | 🗣 SCREAMING | 🐍 snake |
-| PHP | 🐪 lowerCamel<br>🐍 snake (※2) | 🐫 Pascal | 🗣 SCREAMING | 🐫 Pascal (PSR-4) |
-| SQL (DBカラム) | 🐍 snake | - | - | - |
-| HTML / CSS | 🍢 kebab (class/id) | - | - | 🍢 kebab |
-| URL / APIパス | 🍢 kebab | - | - | 🍢 kebab |
+| 言語 / 技術             | 変数・関数                     | クラス・型 | 定数           | ファイル名                           |
+| ----------------------- | ------------------------------ | ---------- | -------------- | ------------------------------------ |
+| JavaScript / TypeScript | 🐪 lowerCamel                  | 🐫 Pascal  | 🗣 SCREAMING    | 🍢 kebab (推奨)<br>🐫 Pascal (React) |
+| Python                  | 🐍 snake                       | 🐫 Pascal  | 🗣 SCREAMING    | 🐍 snake                             |
+| Java                    | 🐪 lowerCamel                  | 🐫 Pascal  | 🗣 SCREAMING    | 🐫 Pascal                            |
+| C#                      | � Pascal (※3)                  | 🐫 Pascal  | 🗣 SCREAMING    | 🐫 Pascal                            |
+| Go                      | 🐪 lowerCamel                  | 🐫 Pascal  | 🐫 Pascal (※1) | 🐍 snake                             |
+| Ruby                    | 🐍 snake                       | 🐫 Pascal  | 🗣 SCREAMING    | 🐍 snake                             |
+| Rust                    | 🐍 snake                       | 🐫 Pascal  | 🗣 SCREAMING    | 🐍 snake                             |
+| PHP                     | 🐪 lowerCamel<br>🐍 snake (※2) | 🐫 Pascal  | 🗣 SCREAMING    | 🐫 Pascal (PSR-4)                    |
+| SQL (DB カラム)         | 🐍 snake                       | -          | -              | -                                    |
+| HTML / CSS              | 🍢 kebab (class/id)            | -          | -              | 🍢 kebab                             |
+| URL / API パス          | 🍢 kebab                       | -          | -              | 🍢 kebab                             |
 
-**(※1)** Go言語では、先頭が大文字ならPublic（外部公開）、小文字ならPrivateという厳格なルールがあるため、定数でもキャメル/パスカルを使います。
+**(※1)** Go 言語では、先頭が大文字なら Public（外部公開）、小文字なら Private という厳格なルールがあるため、定数でもキャメル/パスカルを使います。
 
-**(※2)** PHPはフレームワーク（Laravel等）やWordPressなどの文化圏によって流儀が分かれますが、最近はPSR準拠でキャメルが優勢です。
+**(※2)** PHP はフレームワーク（Laravel 等）や WordPress などの文化圏によって流儀が分かれますが、最近は PSR 準拠でキャメルが優勢です。
+
+**(※3)** Java と異なり、C#は関数と public な変数は PascalCase です。lowerCamel はローカル変数、private フィールドなどに使われます。
 
 ## なぜ使い分ける必要があるのか？
 
-### 1. 「Webの標準」と「プログラムの都合」の衝突
+### 1. 「Web の標準」と「プログラムの都合」の衝突
 
 Web（HTML/CSS/URL）は、大文字小文字を区別しない（Case Insensitive）歴史が長いため、可読性のために区切り文字が必要でした。そこで選ばれたのがハイフン（`-`）です。
 
-一方でプログラミング言語（JS, Python等）では、ハイフンは演算子の「マイナス」です。
+一方でプログラミング言語（JS, Python 等）では、ハイフンは演算子の「マイナス」です。
 
 `user-id` と書くと、「user 引く id」という計算式になってしまいます。
 
@@ -96,24 +99,24 @@ Web（HTML/CSS/URL）は、大文字小文字を区別しない（Case Insensiti
 
 ### 2. Next.js (React) ユーザーへの特記事項
 
-JavaScriptの世界では、ファイル名とコード内で規則が混在しがちです。
+JavaScript の世界では、ファイル名とコード内で規則が混在しがちです。
 
-特にNext.jsでは以下の使い分けがベストプラクティスです。
+特に Next.js では以下の使い分けがベストプラクティスです。
 
 - **コンポーネント (コード内)**: `UserProfile.tsx` (パスカルケース)
 - **関数・変数 (コード内)**: `getUserProfile()` (ローワーキャメル)
-- **画像・アセット (publicフォルダ)**: `user-profile.png` (ケバブケース)
-- **URLになるルーティング**: `app/user-profile/page.tsx` (ケバブケース)
+- **画像・アセット (public フォルダ)**: `user-profile.png` (ケバブケース)
+- **URL になるルーティング**: `app/user-profile/page.tsx` (ケバブケース)
 
-「URLやファイルシステムに関わる部分はケバブ、JavaScriptとして動く部分はキャメル/パスカル」と覚えておくとスッキリします。
+「URL やファイルシステムに関わる部分はケバブ、JavaScript として動く部分はキャメル/パスカル」と覚えておくとスッキリします。
 
 ## まとめ
 
 - **JS/TS/Java/Go** を書くなら基本は **キャメルケース** 🐪
 - **Python/Ruby/SQL/Rust** を書くなら基本は **スネークケース** 🐍
 - **HTML/CSS/URL/画像ファイル** は **ケバブケース** 🍢
-- **クラス名・Reactコンポーネント** は偉そうに **パスカルケース** 🐫
+- **クラス名・React コンポーネント** は偉そうに **パスカルケース** 🐫
 
 「郷に入っては郷に従え」で、言語やフレームワーク推奨のスタイルに合わせることが、可読性の高いコードへの第一歩です。
 
-迷ったら公式ドキュメントや有名なOSSのコードを覗いてみましょう！
+迷ったら公式ドキュメントや有名な OSS のコードを覗いてみましょう！
