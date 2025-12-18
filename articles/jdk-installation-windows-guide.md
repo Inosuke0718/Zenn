@@ -24,7 +24,7 @@ https://www.oracle.com/jp/java/technologies/downloads/#java21
 
 インストーラーを起動すると、以下のような画面が表示されます。
 
-![](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/jdk%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB.png?raw=true)
+![JDKInstall](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/jdk%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB.png?raw=true)
 
 基本的には「次へ（Next）」をクリックしてデフォルト設定のまま進めていけば OK です。
 インストール先（例: `C:\Program Files\Java\jdk-xx`）は後で使うので、心の片隅に留めておいてくださいね。
