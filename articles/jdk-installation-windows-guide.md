@@ -24,7 +24,7 @@ https://www.oracle.com/jp/java/technologies/downloads/#java21
 
 インストーラーを起動すると、以下のような画面が表示されます。
 
-![](/images/java-set-up/jdkインストール.png)
+![](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/jdk%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB.png?raw=true)
 
 基本的には「次へ（Next）」をクリックしてデフォルト設定のまま進めていけば OK です。
 インストール先（例: `C:\Program Files\Java\jdk-xx`）は後で使うので、心の片隅に留めておいてくださいね。
@@ -37,27 +37,27 @@ https://www.oracle.com/jp/java/technologies/downloads/#java21
 
 まずは Windows の検索バー（スタートメニュー）に「環境変数」と入力し、「システム環境変数の編集」を開きます。
 
-![](/images/java-set-up/variables1.png)
+![](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/variables1.png?raw=true)
 
 すると、「システムのプロパティ」という小難しい画面が出てきますが、怖がることはありません。
 右下にある**「環境変数(N)...」**というボタンをクリックしてください。
 
-![](/images/java-set-up/variables2.png)
-![](/images/java-set-up/variables3.png)
+![](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/variables2.png?raw=true)
+![](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/variables3.png?raw=true)
 
 ### 2. JAVA_HOME の作成
 
 次に、Java のインストール場所を示す `JAVA_HOME` という変数を作ります。
 「システム環境変数(S)」の方にある**「新規(W)...」**ボタンをクリックします。
 
-![](/images/java-set-up/variables4.png)
+![](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/variables4.png?raw=true)
 
 新しいユーザー変数（またはシステム変数）の入力画面が出たら、以下のように入力します。
 
 - **変数名**: `JAVA_HOME`
 - **変数値**: JDK をインストールしたフォルダのパス（例: `C:\Program Files\Java\jdk-21\bin` など）
 
-![](/images/java-set-up/variables5.png)
+![](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/variables5.png?raw=true)
 
 入力できたら「OK」を押して保存します。
 
@@ -66,7 +66,7 @@ https://www.oracle.com/jp/java/technologies/downloads/#java21
 最後に、どのフォルダからでも `java` コマンドを使えるように、`Path` を編集します。
 システム環境変数の一覧から **`Path`** を探して選択し、**「編集(I)...」**ボタンをクリックします。
 
-![](/images/java-set-up/variables6.png)
+![](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/variables6.png?raw=true)
 
 環境変数名の編集画面が開いたら、右上の**「新規(N)」**をクリックし、以下を追加します。
 
@@ -74,7 +74,7 @@ https://www.oracle.com/jp/java/technologies/downloads/#java21
 %JAVA_HOME%\bin
 ```
 
-![](/images/java-set-up/variables7.png)
+![](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/variables7.png?raw=true)
 
 これは「さっき作った `JAVA_HOME` の中にある `bin` フォルダを参照してね」という意味です。
 入力が終わったら、開いている全てのウィンドウで「OK」を押して閉じてください。
@@ -90,7 +90,7 @@ java -version
 
 以下のようにバージョン情報が表示されれば大成功です！🎉
 
-![](/images/java-set-up/java-v.png)
+![](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/java-v.png?raw=true)
 
 もしエラーが出る場合は、コマンドプロンプトを再起動するか、パスの設定が間違っていないかもう一度確認してみてください。
 
