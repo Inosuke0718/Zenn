@@ -37,7 +37,7 @@ https://www.oracle.com/jp/java/technologies/downloads/#java21
 
 まずは Windows の検索バー（スタートメニュー）に「環境変数」と入力し、「システム環境変数の編集」を開きます。
 
-![](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/variables1.png?raw=true)
+![VariableSetting](https://github.com/Inosuke0718/Zenn/blob/main/images/java-set-up/variables1.png?raw=true)
 
 すると、「システムのプロパティ」という小難しい画面が出てきますが、怖がることはありません。
 右下にある**「環境変数(N)...」**というボタンをクリックしてください。
