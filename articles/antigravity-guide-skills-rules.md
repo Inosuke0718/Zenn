@@ -6,126 +6,135 @@ topics: ["antigravity", "gemini", "ai", "workflow", "guide"]
 published: true
 ---
 
-# Antigravity で迷う「Skills？Rules？Workflow？GEMINI.md？」使い分けガイド（初学者向け）
+# Antigravity で迷う「Skills？Rules？Workflow？GEMINI.md？」使い分けガイド
 
-Antigravity を触り始めると、**Rules**や**Skills**、さらに**Workflow**や`GEMINI.md`といった“AI に指示する仕組み”がいくつも出てきて混乱しがちです 。  
-結論から言うと、これは役割が違います（似て見えても、置き場所と効かせ方が違う）。
+AI エディタの Antigravity を触り始めると、**Rules** や **Skills**、さらに **Workflow** や `GEMINI.md` といった“AI に指示する仕組み”がいくつも出てきて、「結局どこに何を書けばいいの？」と迷う瞬間、ありませんか？ 🤔
 
-この記事では、Antigravity（Gemini 系環境）でよくある構成「`GEMINI.md` + skills/」を前提に、**初学者が迷わない使い分け**を表と具体例でまとめます 。
+結論から言うと、これらは役割が明確に違います。（似て見えても、AI への「効かせ方」が違うのです）
+
+この記事では、Java（JSP/Servlet）や Python を学ぶ皆さんが直面するリアルな開発シーンを例に、**初学者が迷わない使い分け**を表と具体例でまとめます。
 
 ---
 
-## まず結論：一言でいうと何？
+## 🏁 まず結論：一言でいうと何？
 
 - `GEMINI.md`：プロジェクトの「憲法」（絶対守る基本方針）
-- Rules：日常運用の「ガードレール」（常時/条件付きで適用されるルール）
-- Skills：タスク別の「専門家マニュアル」（必要なときにだけ読む“役割・手順”）
-- Workflow：作業の「手順書」（人間 or エージェントが手順通りに進めるための流れ）
+- Rules：日常運用の「ガードレール」（常時、または条件付きで適用されるルール）
+- Skills：タスク別の「専門家マニュアル」（必要なときにだけ読む“手順書”）
+- Workflow：作業の「進行表」（人間やエージェントが順序通りに進めるためのフロー）
 
-ポイントは、**Rules/GEMINI.md は“どう振る舞うべきか”**、**Skills/Workflow は“どうやって達成するか”**の比重が高いことです 。
-
----
-
-## 使い分け早見表（これだけ見れば OK）
-
-| 名前              | 役割（何を書く？）                                                  | いつ効く？                                              | 置きどころのイメージ                                 | 向いてる例                                                                              |
-| ----------------- | ------------------------------------------------------------------- | ------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `GEMINI.md`       | 最上位方針（口調・品質基準・禁止事項・プロジェクトの前提）          | チャット開始時にまず読まれる前提                        | リポジトリルート直下                                 | 「この PJ は Next.js(App Router)、TypeScript 必須」「出力は日本語」「セキュリティ優先」 |
-| Rules             | 開発ルール（命名規則、i18n 運用、コミット規約、例外処理の統一など） | Always On / Model Decision など設定により常時〜条件付き | `agent/rules/` など（UI から管理）                   | 「翻訳キーは ja/en 両方に必ず追加」「API は必ず Zod でバリデーション」                  |
-| Skills（skills/） | タスク別の専門手順（役割・判断基準・チェックリスト・必要ファイル）  | 依頼内容に応じて自動ピックされる想定                    | `skills/` フォルダに用途別ファイル                   | 「ブログ記事作成スキル」「リファクタ手順スキル」「Shopify 商品登録スキル」              |
-| Workflow          | 手順の流れ（手順 1→2→3、入力/出力、完了条件）                       | 実行するときだけ参照（都度）                            | docs/ や skills 内、またはプロジェクト運用に合わせる | 「リリース手順」「新規ページ追加」「障害対応フロー」                                    |
-
-> 記事の運用例では、Gemini はまず`GEMINI.md`を読み、依頼に応じて`skills/`から最適なスキルを選ぶ、という整理でした 。
+ポイントは、**Rules/GEMINI.md は“どう振る舞うべきか（お作法）”**、**Skills/Workflow は“どうやって達成するか（手順）”** の比重が高いことです。
 
 ---
 
-## Rules の「Model Decision」って何？ Skills と同じ？
+## 📊 使い分け早見表（これだけ見れば OK）
 
-同じに見えやすい理由は、どちらも「モデルが必要だと思ったら適用する」動きになり得るからです 。  
-ただし、**目的が違う**ので分けると運用が楽になります 。
+Java や Python の開発現場に置き換えると、以下のようなイメージです。
 
-- Model Decision な Rules：  
-  “破ると事故るルール”を、状況に応じて賢く効かせたい（ただし基本は守ってほしい）
-  ![Model Decision](https://github.com/Inosuke0718/Zenn/blob/main/images/antigravity-guide-skills-rules/image-5.png?raw=true)
-- Skills：  
-  “この作業をやるときの詳細手順・役割”を、必要なときだけロードしてトークン節約＆再現性 UP
+| 名前 | 役割（何を書く？） | いつ効く？ | 向いてる例（Java/Python） |
+| --- | --- | --- | --- |
+| **GEMINI.md** | **最上位方針**<br>（言語ver・禁止事項・プロジェクト前提） | チャット開始時に<br>まず読まれる | 「Java 17 / Python 3.11 を使用」「日本語で回答」「初学者向けに優しく解説」 |
+| **Rules** | **開発ルール**<br>（命名規則、コーディング規約、禁止コード） | Always On / Model Decision<br>（常時〜条件付き） | 「クラス名は PascalCase」「JSP に Java のロジックを書かない（MVC）」「Python は Type Hint を必須に」 |
+| **Skills** | **タスク別の専門手順**<br>（役割・判断基準・テンプレート） | 依頼内容に応じて<br>自動ピックされる想定 | 「Servlet クラス作成スキル」「DAO パターン実装スキル」「スクレイピング用コード生成スキル」 |
+| **Workflow** | **手順の流れ**<br>（手順 1→2→3、入出力、完了条件） | 実行するときだけ<br>参照（都度） | 「Tomcat デプロイ手順」「`requirements.txt` 更新フロー」「DB 接続テスト手順」 |
 
-迷ったらこの基準が簡単です：
-
-- **横断的・常設の規約** → Rules（または`GEMINI.md`）
-- **特定タスクのレシピ** → Skills（＋ Workflow）
+> Gemini はまず`GEMINI.md`（憲法）を読み、依頼に応じて`skills/`から「今回は Servlet 作成スキルを使おう」と道具を選ぶ、というイメージです 🛠️
 
 ---
 
-## 具体例：i18n ルールはどこに置く？
+## 🚦 Rules の「Model Decision」って何？ Skills と同じ？
 
-たとえば画像のような「翻訳キー運用（ja/en 両方更新、重複回避、命名規則…）」は、プロジェクト全体に関わるので Rules が向いています（常に守ってほしい）。
+ここが一番の悩みどころです。「モデルが必要だと思ったら適用する」という点で似ているからです。
+ですが、**目的**で分けると運用が楽になります。
 
-一方で、もし「翻訳キー追加を自動化して、差分作成までやる」みたいに**作業フロー化**するなら、Skills/Workflow 側に寄せるとメリットが出ます 。
+- **Model Decision な Rules**：
+  「うっかり破るとバグや減点対象になるルール」を、AI が空気を読んで守ってくれる機能。
+- **Skills**：
+  「特定の機能を作るときのレシピ」を、必要なときだけ呼び出して再現性を高める機能。
 
-- Rules 側（例）：
-  - `useTranslations`を使うなら ja/en 両方にキーを追加する
-  - 追加前に既存キーを検索して重複を避ける
-  - 命名規則（例：`page.section.item`）を守る
-- Skills 側（例）：
-  - “翻訳キー追加スキル”として、具体的な手順（検索 → 追加 → 整形 → チェック → テスト）を提供する
-  - 可能ならスクリプト/コマンドも同梱して半自動化する
+### 迷ったときの判断基準
 
----
-
-## 初学者向け：おすすめの最小構成
-
-最初は次の 2 つだけでも十分です 。
-
-1. `GEMINI.md`：プロジェクトの大前提（5〜15 行くらい）
-2. Rules：日常で破りがちなルール（i18n、命名、例外処理など）
-
-慣れてきたら、頻繁に繰り返す作業を Skills/Workflow へ移します 。
-
-- 繰り返す作業が増える
-- 生成品質にムラがある
-- 依頼するたびに同じ説明をしている  
-  → このどれかが出たら Skills 化のタイミングです 。
+- **「クラス名の付け方」や「インデント」など、全体で守るべき規約**
+  👉 **Rules**（または`GEMINI.md`）へ
+- **「ログイン画面を作る」「CSV を読み込む」など、特定の作業手順**
+  👉 **Skills**（＋ Workflow）へ
 
 ---
 
-## そのまま使えるテンプレ
+## 🐍 具体例：MVC モデルやインデント規約はどこ？
 
-### GEMINI.md（最小）
+たとえば、JSP/Servlet や Python 開発でよくある以下のルールは、プロジェクト全体に関わるので **Rules** が向いています。
+
+### Rules に書くべきこと（常時守ってほしい）
+- **Java/JSP**:
+  - JSP ファイルには `<% Javaコード %>` を書かず、EL 式と JSTL を使う（MVC の分離）。
+  - クラス名は必ずアッパーキャメルケース（`StudentData`）、変数名はローワーキャメルケース（`studentName`）。
+  - `System.out.println` は使わず、ロガーを使用する。
+- **Python**:
+  - インデントはスペース 4 つ。
+  - 関数には必ず型ヒント（Type Hinting）をつける（例: `def add(a: int, b: int) -> int:`）。
+
+### Skills/Workflow に書くべきこと（作業フロー化）
+一方で、「新しい機能を実装する」ような一連の流れは Skills に寄せるとメリットが出ます。
+
+- **Skills 側（例：新規 Servlet 追加スキル）**:
+  1. `HttpServlet` を継承したクラスを作成する。
+  2. `@WebServlet` アノテーションで URL パターンを指定する。
+  3. `doGet` / `doPost` メソッドをオーバーライドする。
+  4. 転送先の JSP ファイルが存在するかチェックする。
+
+---
+
+## 🔰 初学者向け：おすすめの最小構成
+
+最初から全部使いこなそうとするとパンクします。まずは次の 2 つだけで十分です！
+
+1. **`GEMINI.md`**：プロジェクトの大前提（5〜10 行くらい）
+2. **Rules**：授業や現場で「これだけは守れ」と言われる鉄の掟
+
+慣れてきて、「毎回同じようなコード修正をお願いしてるな…」と感じたら、その作業を Skills へ移しましょう。
+
+---
+
+## 📝 そのまま使えるテンプレ
+
+### GEMINI.md（最小構成）
 
 ```md
 # Project Constitution (GEMINI.md)
 
-- Output language: Japanese
-- Stack: Next.js(App Router) + TypeScript
-- Prefer small, safe diffs.
-- Never invent API responses; ask when unsure.
-- Follow project Rules and existing patterns.
+- Language: Japanese (出力は日本語で行うこと)
+- Tech Stack: Java 17, Servlet 6.0, JSP, Python 3.11
+- Tone: Helpful and educational for beginners.
+- Priority: Code readability and best practices (PEP8 / Java Naming Conventions).
 ```
 
-（上は例です。あなたの PJ に合わせて短く保つのがコツです）
-
-### Skills ファイル（最小の考え方）
+### Skills ファイル（例：Java の DAO 作成）
 
 ```md
-# i18n-key-add Skill
+# create-dao-skill
 
 ## When to use
 
-- When adding new UI text that requires translations.
+- When the user asks to create a Data Access Object (DAO) for database operations.
 
 ## Checklist
 
-- Search existing keys to avoid duplicates.
-- Add keys to both ja and en JSON.
-- Keep the same nested structure.
-- Verify the component uses the correct key.
+- Use `try-with-resources` to ensure `Connection`, `PreparedStatement`, and `ResultSet` are closed.
+- Do not hardcode SQL values; use `?` placeholder.
+- Throw distinct exceptions or handle them gracefully; don't just print stack trace.
+- Follow the Singleton pattern or Dependency Injection if applicable.
 ```
 
-“作業の型”だけ書いておけば、毎回の説明コストが下がります 。
+このように「**気をつけるポイント（チェックリスト）**」を書いておくだけで、AI が生成するコードの品質（特に DB 周りの安全性）がグッと上がります ✨
 
 ---
 
-![](/images/antigravity-guide-skills-rules.jpg)
+## まとめ
 
-i18n（internationalization / 国際化）とは、アプリや Web サイトを多言語・多地域に対応できるように、最初から設計・実装しておくことです 。たとえば「画面の文言をコードに直書きせず、翻訳用の JSON（リソースファイル）からキーで取り出す」「言語によって日付/通貨/表記が変わっても破綻しない」ようにしておくのが典型です 。なお、特定の言語向けに翻訳・調整する作業は l10n（localization / ローカライズ）と呼ばれ、i18n の次の工程として説明されます 。
+- **`GEMINI.md`** は「プロジェクトの前提（言語バージョンなど）」。
+- **Rules** は「常に守るべきコーディング規約（命名規則・MVC など）」。
+- **Skills** は「特定のタスクを行うための手順書（DAO 作成など）」。
+- 迷ったら、まずは `GEMINI.md` と `Rules` に「先生によく注意されること」を書いてみましょう！
+
+AI に正しく指示を出せれば、プログラミング学習の効率は何倍にもなります。ぜひ試してみてくださいね！🚀
