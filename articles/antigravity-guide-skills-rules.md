@@ -1,14 +1,14 @@
 ---
-title: "Antigravityで迷う「Skills？Rules？Workflow？GEMINI.md？」使い分けガイド（初学者向け）"
+title: "Antigravityで迷う「Rules？Workflow？GEMINI.md？」使い分けガイド（初学者向け）"
 emoji: "🗺️"
 type: "tech"
 topics: ["antigravity", "gemini", "ai", "workflow", "guide"]
 published: true
 ---
 
-# Antigravity で迷う「Skills？Rules？Workflow？GEMINI.md？」使い分けガイド
+# Antigravity で迷う「Rules？Workflow？GEMINI.md？」使い分けガイド
 
-AI エディタの Antigravity を触り始めると、**Rules** や **Skills**、さらに **Workflow** や `GEMINI.md` といった“AI に指示する仕組み”がいくつも出てきて、「結局どこに何を書けばいいの？」と迷う瞬間、ありませんか？ 🤔
+AI エディタの Antigravity を触り始めると、**Rules** や **Workflow**、さらに `GEMINI.md` といった"AI に指示する仕組み"がいくつも出てきて、「結局どこに何を書けばいいの？」と迷う瞬間、ありませんか？ 🤔
 
 結論から言うと、これらは役割が明確に違います。
 
@@ -18,10 +18,18 @@ AI エディタの Antigravity を触り始めると、**Rules** や **Skills**�
 
 ## 🏁 まず結論：一言でいうと何？
 
-- **`GEMINI.md`**：プロジェクトの**「履歴書」**（このプロジェクトの言語・レベル感・性格）
-- **Rules**：日常運用の**「校則」**（常時、または条件付きで守るべきルール）
-- **Skills**：タスク別の**「手順書」**（必要なときにだけ取り出す作業マニュアル）
-- **Workflow**：作業の**「進行表」**（手順 1→2→3 と進めるフローチャート）
+- **`GEMINI.md`（グローバル設定）**：
+  AI 全体の**「性格・前提条件」**
+  （この環境で使う言語・レベル感・口調など、システム全体に共通の設定）
+
+- **Rules（ワークスペースルール）**：
+  プロジェクトごとに決める**「校則」**
+  （命名規則・フォーマット・MVC 方針など、そのワークスペース専用の開発ルール）
+
+- **Workflow**：
+  特定タスクの**「作業フロー」**
+  （手順 1→2→3 を自動でなぞる実行用フローチャート）
+
 
 ポイントは、**GEMINI.md は「私はこういう者です（自己紹介）」**、**Rules は「これは禁止です（禁止事項）」** というニュアンスの違いです。
 
@@ -31,38 +39,40 @@ AI エディタの Antigravity を触り始めると、**Rules** や **Skills**�
 
 Java や Python の開発現場に置き換えると、以下のようなイメージです。
 
-| 名前          | 役割（何を書く？）                                       | いつ効く？                                       | **保存場所（ここが正解！）**                                                                                               | 向いてる例（Java/Python）                                                               |
-| ------------- | -------------------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| **GEMINI.md** | **基本プロフィール**<br>（履歴書：言語 ver・対象レベル） | チャット開始時に<br>まず読まれる                 | **ルート直下**<br>`./GEMINI.md`<br><small>※AI への自己紹介カード</small>                                                   | 「Java 17 / Python 3.11 を使用」「日本語で回答」「初学者向けに優しく解説」              |
-| **Rules**     | **開発ルール**<br>（校則：命名規則、MVC）                | Always On / Model Decision<br>（常時〜条件付き） | **.agent フォルダ**<br>`./.agent/rules/*.md`<br><small>※Antigravity が自動で読み込む標準の場所</small>                     | 「クラス名は PascalCase」「JSP に Java ロジックを書かない」「Python は Type Hint 必須」 |
-| **Skills**    | **タスク別の手順書**<br>（役割・テンプレート）           | 依頼内容に応じて<br>自動ピックされる想定         | **.skills フォルダ**<br>`./.skills/*.md`<br><small>※隠しフォルダにしてルートを汚さないのが通例</small>                     | 「Servlet クラス作成手順」「DAO パターン実装手順」「スクレイピングコード生成手順」      |
-| **Workflow**  | **作業の進行表**<br>（手順 1→2→3、入出力）               | 実行するときだけ<br>参照（都度）                 | **.agent フォルダ**<br>`./.agent/workflows/*.md`<br><small>※ここに入れないと「ワークフロー機能」として認識されない</small> | 「Tomcat デプロイ手順」「`requirements.txt` 更新フロー」「DB 接続テスト手順」           |
+| 名前          | 役割（何を書く？）                                       | いつ効く？                                       | **保存場所（ここが正解！）**                                                                                                          | 向いてる例（Java/Python）                                                               |
+| ------------- | -------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| **GEMINI.md** | **基本プロフィール**<br>（履歴書：言語 ver・対象レベル） | チャット開始時に<br>まず読まれる                 | **グローバルルール**<br>`~/.gemini/GEMINI.md`<br><small>※システム全体で適用されるルール</small>                                       | 「Java 17 / Python 3.11 を使用」「日本語で回答」「初学者向けに優しく解説」              |
+| **Rules**     | **開発ルール**<br>（校則：命名規則、MVC）                | Always On / Model Decision<br>（常時〜条件付き） | **ワークスペースルール**<br>`./.agent/rules/*.md`<br><small>※プロジェクトごとに設定するルール</small>                                 | 「クラス名は PascalCase」「JSP に Java ロジックを書かない」「Python は Type Hint 必須」 |
+| **Workflow**  | **作業の進行表**<br>（手順 1→2→3、入出力）               | 実行するときだけ<br>参照（都度）                 | **ワークスペースワークフロー**<br>`./.agent/workflows/*.md`<br><small>※ここに入れないと「ワークフロー機能」として認識されない</small> | 「Tomcat デプロイ手順」「`requirements.txt` 更新フロー」「DB 接続テスト手順」           |
 
-> Gemini はまず`GEMINI.md`（履歴書）を見て「あ、今回は初心者向けの Java 案件ね」と理解し、次に`Rules`（校則）をチェックし、依頼に応じて`skills/`から道具を選ぶ…という流れです 🛠️
+> Gemini はまず`GEMINI.md`（グローバルルール）を見て「あ、今回は初心者向けの Java 案件ね」と理解し、次に`Rules`（ワークスペースルール）をチェックして、プロジェクト固有の規約を把握する…という流れです 🛠️
 
 ### ⚠️ 「Skills」というボタンはありません
 
 Antigravity のメニューに「Skills」という機能があるわけではありません。
-開発者の間で流行っている「**特定の作業手順を書いたファイルを `.skills/` フォルダにまとめて、AI に都度読ませるテクニック**」のことを指しています。「機能名」ではなく「運用テクニックの名前」だと覚えておきましょう！
+
+**重要**：`.skills/` フォルダは Antigravity の**公式機能ではありません**。一部のコミュニティで使われている非公式の運用テクニックです。公式には **Rules** と **Workflows** のみがサポートされています。
+
+特定のタスク手順を管理したい場合は、**Workflows**（`.agent/workflows/*.md`）の使用を推奨します。
 
 ---
 
-## 🚦 Rules の「Model Decision」って何？ Skills と同じ？
+## 🚦 Rules と Workflow の違いは？
 
-ここが一番の悩みどころです。「モデルが必要だと思ったら適用する」という点で似ているからです。
-ですが、**目的**で分けると運用が楽になります。
+「Rules」と「Workflow」、どこが違うの？という疑問がよくあります。
+**目的**で分けると運用が楽になります。
 
-- **Model Decision な Rules**：
+- **Rules**：
   「うっかり破るとバグや減点対象になる**校則**」を、AI が空気を読んで守ってくれる機能。
-- **Skills**：
-  「特定の機能を作るときの**レシピ**」を、必要なときだけ呼び出して再現性を高める機能。
+- **Workflow**：
+  「特定の作業を行うときの**手順書**」を、必要なときに明示的に呼び出して再現性を高める機能。
 
 ### 迷ったときの判断基準
 
 - **「クラス名の付け方」や「インデント」など、全体で守るべき規約**
   👉 **Rules**（または`GEMINI.md`）へ
-- **「ログイン画面を作る」「CSV を読み込む」など、特定の作業手順**
-  👉 **Skills**（＋ Workflow）へ
+- **「Tomcat デプロイ」「DB 接続テスト」など、特定の作業手順**
+  👉 **Workflow** へ
 
 ---
 
@@ -80,11 +90,11 @@ Antigravity のメニューに「Skills」という機能があるわけでは�
   - インデントはスペース 4 つ。
   - 関数には必ず型ヒント（Type Hinting）をつける（例: `def add(a: int, b: int) -> int:`）。
 
-### Skills/Workflow に書くべきこと（レシピ：作業フロー化）
+### Workflow に書くべきこと（手順書：作業フロー化）
 
-一方で、「新しい機能を実装する」ような一連の流れは Skills に寄せるとメリットが出ます。
+一方で、「新しい機能を実装する」ような一連の流れは Workflow に書くとメリットが出ます。
 
-- **Skills 側（例：新規 Servlet 追加スキル）**:
+- **Workflow 側（例：新規 Servlet 追加ワークフロー `.agent/workflows/create-servlet.md`）**:
   1. `HttpServlet` を継承したクラスを作成する。
   2. `@WebServlet` アノテーションで URL パターンを指定する。
   3. `doGet` / `doPost` メソッドをオーバーライドする。
@@ -96,19 +106,21 @@ Antigravity のメニューに「Skills」という機能があるわけでは�
 
 最初から全部使いこなそうとするとパンクします。まずは次の 2 つだけで十分です！
 
-1. **`GEMINI.md`**：プロジェクトの自己紹介（5〜10 行くらい）
-2. **Rules**：「これだけは守れ」と言われる鉄の掟（校則）
+1. **`GEMINI.md`（グローバルルール）**：システム全体の自己紹介（5〜10 行くらい）
+2. **Rules（ワークスペースルール）**：「これだけは守れ」と言われる鉄の掟（校則）
 
-慣れてきて、「毎回同じようなコード修正をお願いしてるな…」と感じたら、その作業を Skills へ移しましょう。
+慣れてきて、「毎回同じようなコード修正をお願いしてるな…」と感じたら、その作業を **Workflow** として定義しましょう。
 
 ---
 
 ## 📝 そのまま使えるテンプレ
 
-### GEMINI.md（最小構成：履歴書）
+### GEMINI.md（グローバルルール）
+
+- **保存場所**：`~/.gemini/GEMINI.md`（システム全体に適用）
 
 ```md
-# Project Profile (GEMINI.md)
+# Project Profile (~/.gemini/GEMINI.md)
 
 - Language: Japanese (出力は日本語で行うこと)
 - Tech Stack: Java 17, Servlet 6.0, JSP, Python 3.11
@@ -116,32 +128,52 @@ Antigravity のメニューに「Skills」という機能があるわけでは�
 - Priority: Code readability and best practices (PEP8 / Java Naming Conventions).
 ```
 
-### Skills ファイル（例：Java の DAO 作成）
+### ワークスペース固有のルール
+
+プロジェクト固有のルールは `.agent/rules/` フォルダに分割して配置します。
 
 ```md
-# create-dao-skill
+# Project Rules (.agent/rules/project-profile.md)
 
-## When to use
+## 命名規則
 
-- When the user asks to create a Data Access Object (DAO) for database operations.
+- クラス名は PascalCase
+- 変数名は camelCase
 
-## Checklist
+## MVC 分離
 
-- Use `try-with-resources` to ensure `Connection`, `PreparedStatement`, and `ResultSet` are closed.
-- Do not hardcode SQL values; use `?` placeholder.
-- Throw distinct exceptions or handle them gracefully; don't just print stack trace.
-- Follow the Singleton pattern or Dependency Injection if applicable.
+- JSP に Java ロジックを書かない
+- Controller は薄く保つ
 ```
 
-このように「**気をつけるポイント（チェックリスト）**」を書いておくだけで、AI が生成するコードの品質（特に DB 周りの安全性）がグッと上がります ✨
+### Workflow ファイル（例：Java の DAO 作成）
+
+```md
+# create-dao-workflow (.agent/workflows/create-dao.md)
+
+## 概要
+
+データベース操作用の Data Access Object (DAO) を作成する手順
+
+## 手順
+
+1. `dao/` ディレクトリに新しいクラスファイルを作成
+2. `try-with-resources` で `Connection`, `PreparedStatement`, `ResultSet` を管理
+3. SQL 値はハードコードせず `?` プレースホルダを使用
+4. スタックトレースを出力するだけでなく、適切な例外処理を実装
+5. 必要に応じて Singleton パターンまたは DI を適用
+```
+
+このように「**作業手順**」を Workflow に書いておくだけで、AI が生成するコードの品質がグッと上がります ✨
 
 ---
 
 ## まとめ
 
-- **`GEMINI.md`** は「プロジェクトの**履歴書・自己紹介**」。
-- **Rules** は「常に守るべき**校則**（命名規則・MVC など）」。
-- **Skills** は「特定のタスクを行うための**手順書**（DAO 作成など）」。
-- 迷ったら、まずは `GEMINI.md` に「こういうふうに教えてほしい」という要望を書いてみましょう！
+- **グローバルルール**（`~/.gemini/GEMINI.md`）は「システム全体の**履歴書・自己紹介**」。
+- **ワークスペースルール**（`.agent/rules/*.md`）は「プロジェクトごとに守るべき**校則**（命名規則・MVC など）」。
+- **Workflows**（`.agent/workflows/*.md`）は「特定のタスクを行うための**手順書**（オンデマンドで実行）」。
+
+迷ったら、まずは `GEMINI.md` に「こういうふうに教えてほしい」という要望を書いてみましょう！
 
 AI に正しく指示を出せれば、プログラミング学習の効率は何倍にもなります。ぜひ試してみてくださいね！🚀
