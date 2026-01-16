@@ -170,7 +170,10 @@ AI ツールは強力ですが、使い方を誤ると学習効果が薄れま�
 
 コマンドラインでの操作に不安がある方は、まず GUI ツールから始めましょう。
 
-👉 **学習リソース**：[Git 入門動画](https://www.youtube.com/watch?v=hdpMw3hyQq4)
+👉 **学習リソース**:
+
+- 🎥 [Git 入門動画](https://www.youtube.com/watch?v=hdpMw3hyQq4)
+- 📝 [【超入門】Git とは？今日から始めるバージョン管理の第一歩](https://zenn.dev/imohuke/articles/git-beginner-guide-version-control)
 
 ---
 
@@ -192,6 +195,12 @@ AI ツールは強力ですが、使い方を誤ると学習効果が薄れま�
 理由としては、初学者が企業に自分の作成したアプリを見てもらうには Github の URL を送付するのが一般的です。そうすることでソースコードと一緒に README でアプリの概要や URL を共有することができます。
 
 **企業の採用担当者がまず見るのは README**です。以下の項目を含めた丁寧な README を作成しましょう。
+
+:::message
+**Markdown の書き方が分からない方へ**
+README は Markdown 記法で記述します。基本から学びたい方はこちらの記事をご覧ください。
+[Markdown とは？書き方から人気の理由まで完全解説](https://zenn.dev/imohuke/articles/markdown-complete-guide)
+:::
 
 **必須記載項目**
 
