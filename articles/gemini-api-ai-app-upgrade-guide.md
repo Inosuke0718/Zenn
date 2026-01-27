@@ -1,5 +1,5 @@
 ---
-title: "【完全無料】ポートフォリオを爆速で強化！Gemini APIを使って「普通のアプリ」を「AIアプリ」に進化させる方法"
+title: "【完全無料】ポートフォリオを簡単に強化！Gemini APIを使って「普通のアプリ」を「AIアプリ」に進化させる方法"
 emoji: "🚀"
 type: "tech"
 topics: ["Gemini", "AI", "API", "ポートフォリオ", "初心者"]
@@ -7,7 +7,7 @@ slug: "gemini-api-ai-app-upgrade-guide"
 published: true
 ---
 
-# 【完全無料】ポートフォリオを爆速で強化！Gemini APIを使って「普通のアプリ」を「AIアプリ」に進化させる方法
+# 【完全無料】ポートフォリオを簡単に強化！Gemini APIを使って「普通のアプリ」を「AIアプリ」に進化させる方法
 
 「ポートフォリオに差別化要素が欲しい」
 「AI機能を組み込んでみたいけど、難しそうだしお金がかかりそう」
@@ -79,6 +79,8 @@ Gemini API（特に `Gemini 2.5 Flash` や `Gemini 2.5 Flash-Lite`）は、Googl
 
 Gemini APIは非常に扱いやすく、主要な言語であればすぐに動かすことができます。ここでは **Node.js (Next.js)**、**Python**、**Java** の3パターンを紹介します。
 
+モデルはコストパフォーマンスに優れた **Gemini 2.5 Flash** を使用しますが、コード内のモデル名を `gemini-3-flash` や `gemini-3-pro` に書き換えるだけで、最新の **Gemini 3** シリーズにアップグレードすることも可能です。
+
 ### 1. Node.js / Next.js の場合
 
 公式の `@google/generative-ai` パッケージを使えば、直感的に記述できます。
@@ -95,6 +97,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 export async function getAiResponse(userMessage) {
   // 高速＆低コストな Gemini 2.5 Flash モデルを指定
+  // ※より高性能な推論が必要な場合は "gemini-3-pro" などに変更してください
   const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   const prompt = `以下のタスクに対してアドバイスをください: ${userMessage}`;
@@ -122,6 +125,7 @@ genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 def get_ai_response(user_message):
     # モデルの準備 (価格性能バランスのよい Gemini 2.5 Flash)
+    # ※複雑なタスクには "gemini-3-pro" などが推奨されます
     model = genai.GenerativeModel("gemini-2.5-flash")
 
     # コンテンツ生成
@@ -149,6 +153,7 @@ import java.net.http.HttpRequest.BodyPublishers;
 public class GeminiService {
     private static final String API_KEY = System.getenv("GEMINI_API_KEY");
     // エンドポイントURL (最新の Gemini 2.5 Flash を使用)
+    // ※ "gemini-3-pro" などに変更することでモデルを切り替え可能です
     private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + API_KEY;
 
     public String getAiResponse(String userMessage) {
@@ -182,14 +187,34 @@ public class GeminiService {
 
 どの言語を使っても、**「APIキーをセットする」「モデルを選ぶ」「プロンプトを送る」** という3ステップは共通です。まずは使い慣れた言語で試してみてください！
 
+## 既存のプロジェクトにAI機能を実装するためのプロンプト例
+
+最近はCursorやGitHub CopilotなどのAIコーディングアシスタントを使って開発している方も多いと思います。
+そうしたツールを使えば、自分でゼロからコードを書かなくても、適切なプロンプト（指示）を投げるだけで実装作業が大幅に短縮できます。
+
+例えば、前述の「チャットアプリへの感情分析機能」を、既存のSpring Bootプロジェクトに追加したい場合のプロンプト例です。
+
+```markdown
+このSpring Bootのチャットアプリに、以下の機能を追加してください。
+
+### 実装機能
+
+チャットメッセージの内容からAIが感情（喜び、怒り、悲しみなど）を分析し、その結果に応じてUIの背景色をフワッと変化させる機能。
+
+### 技術条件
+
+- Gemini APIを使用して実装すること。
+- API KEYは `Config.java` ファイルの、`API_KEY` という定数に設定されている値を使用すること。
+```
+
+このように、**「やりたいこと」**、**「使う技術」**、**「変数の場所（コンテキスト）」** を明確に伝えることで、AIは既存のコードベースを考慮した精度の高いコードを生成してくれます。
+
 ## 結論：就活用ポートフォリオのクオリティを上げよう
 
 採用担当者は多くのポートフォリオを見ています。
 ありきたりなチュートリアル通りのアプリではなく、**「APIを活用して、ユーザーにどんな価値を提供できるか」** を考えられたアプリは目に留まります。
 
 Gemini APIなら、コストゼロでその「工夫」を実現できます。
-
-ぜひ、皆さんの手元のプロジェクトに `npm install` して、AIの力を借りてみてください。アプリ開発がもっと楽しくなるはずです！
 
 ## 参考リンク
 
