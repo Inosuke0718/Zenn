@@ -19,15 +19,16 @@ published: true
 
 ## Gemini API が最強な理由
 
-現在、OpenAIのGPT-4oやAnthropicのClaude 3.5 Sonnetなど強力なモデルがありますが、個人開発において私が **Gemini API** を推す理由は以下の2点です。
+現在、OpenAIやAnthropicから強力なLLMモデルがありますが、個人開発において私が **Gemini API** を推す理由は以下の2点です。
 
 ### 1. 圧倒的なコストパフォーマンス（無料枠がすごい）
 
-Gemini API（特に `Gemini 1.5 Flash`）は、Google AI Studio経由で利用する場合、**無料枠（Free Tier）** が非常に寛容です。
+Gemini API（特に `Gemini 2.5 Flash` や `Gemini 2.5 Flash-Lite`）は、Google AI Studio経由で利用する場合、**無料枠（Free Tier）** が非常に寛容です。
 
-- **高性能**: Flashモデルは軽量ながら非常に賢く、レスポンスが高速です。
+- **高性能・高速**: Gemini 2.5 Flashは軽量ながら非常に賢く、レスポンスが高速です。価格性能のバランスに優れています。
+- **最新モデル**: 2026年現在、AI Studioでは最新の `Gemini 3 Flash` や `Gemini 3 Pro` も標準的に選択でき、より高度な機能も無料で試せます。
 - **無料**: 一定のレート制限（Rate Limits）内であれば、クレジットカード登録なしで無料で使い続けられます。
-  - ※2025年時点での情報です。最新の制限は公式サイトをご確認ください。
+  - ※2026年時点での情報です。最新の制限は公式サイトをご確認ください。
 
 学習用やポートフォリオ用であれば、無料枠を使い切ることはそうそうありません。
 
@@ -93,8 +94,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 export async function getAiResponse(userMessage) {
-  // 高速＆低コストな Flash モデルを指定
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  // 高速＆低コストな Gemini 2.5 Flash モデルを指定
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   const prompt = `以下のタスクに対してアドバイスをください: ${userMessage}`;
 
@@ -120,8 +121,8 @@ import os
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 def get_ai_response(user_message):
-    # モデルの準備
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    # モデルの準備 (価格性能バランスのよい Gemini 2.5 Flash)
+    model = genai.GenerativeModel("gemini-2.5-flash")
 
     # コンテンツ生成
     response = model.generate_content(f"以下のタスクにアドバイスをください: {user_message}")
@@ -147,8 +148,8 @@ import java.net.http.HttpRequest.BodyPublishers;
 
 public class GeminiService {
     private static final String API_KEY = System.getenv("GEMINI_API_KEY");
-    // エンドポイントURL
-    private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + API_KEY;
+    // エンドポイントURL (最新の Gemini 2.5 Flash を使用)
+    private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=" + API_KEY;
 
     public String getAiResponse(String userMessage) {
         try {
