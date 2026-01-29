@@ -1,5 +1,5 @@
 ---
-title: "【デスクトップアプリ入門】Electron + React + Vite + TypeScript で爆速デスクトップアプリ開発（安全＆確実に起動）"
+title: "【デスクトップアプリ入門】Electron + React + Viteで爆速デスクトップアプリ開発（安全＆確実に起動）"
 emoji: "⚡"
 type: "tech"
 topics: ["electron", "react", "vite", "typescript", "desktop-app"]
