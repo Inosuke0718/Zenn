@@ -3,7 +3,7 @@ title: "【デスクトップアプリ入門】Electron + React + Viteで爆速�
 emoji: "⚡"
 type: "tech"
 topics: ["electron", "react", "vite", "typescript", "desktop-app"]
-published: false
+published: true
 ---
 
 「デスクトップアプリを作りたいけど、Electronって環境構築が面倒くさそう…」
