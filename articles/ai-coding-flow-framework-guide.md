@@ -44,8 +44,8 @@ AIは「曖昧な指示」に弱いです。「かっこいいサイト作って
 
 ### やること
 
-1. **Claudeと対話する**
-   - AntigravityではなくClaude（Claude 4.5 Sonnetなど）を使います
+1. **ClaudeやChatGPT、Geminiと対話する**
+   - Antigravityではなく、Claude、ChatGPT、Geminiなどの対話型AIを使います
    - 理由: じっくり考えを整理するには、会話型AIが適しているから
 
 2. **アイデアを洗練させる**
@@ -190,6 +190,8 @@ AIの提案: 「ヘッダーコンポーネントを作成」
 
 ## Agent Managerで並列作業
 
+![Agent Managerの開き方](https://github.com/Inosuke0718/Zenn/blob/main/images/open-agent-manager.png?raw=true)
+
 複数のAIを**同時に**働かせます:
 
 ### 使用例
@@ -203,6 +205,9 @@ AIの提案: 「ヘッダーコンポーネントを作成」
 ---
 
 # Step 4: Workflows（自動化・保守）
+
+![workflowの開き方の図1](https://github.com/Inosuke0718/Zenn/blob/main/images/open-workflow1.png?raw=true)
+![workflowの開き方の図2](https://github.com/Inosuke0718/Zenn/blob/main/images/open-workflow2.png?raw=true)
 
 ## 自己修復テスト
 
@@ -258,7 +263,7 @@ Claudeとの対話:
 ```
 あなた: 「初心者向けのシンプルなToDoアプリの仕様を、
         500文字以内で作ってください。
-        技術スタックはReact + TypeScript + Tailwind CSSで」
+        技術スタックはPython（Streamlitなど）で」
 
 Claude: （SOPを生成）
 ```
@@ -306,17 +311,17 @@ AIが提案したタスクリストをチェック:
 
 ```
 ☐ プロジェクトのセットアップ
-☐ ToDoリストコンポーネントの作成
+☐ ToDoリスト表示機能の実装
 ☐ 追加フォームの実装
 ☐ 削除機能の追加
-☐ LocalStorageでのデータ保存
+☐ データの永続化（SQLite/CSVなど）
 ☐ レスポンシブ対応
 ```
 
 ### 5. アノテーションで微調整
 
 ```
-タスク「ToDoリストコンポーネントの作成」に追加:
+タスク「ToDoリスト表示機能の実装」に追加:
 → 「完了済みタスクには取り消し線とグレーアウトを適用」
 ```
 
