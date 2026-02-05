@@ -1,0 +1,12 @@
+{
+  "rules": [
+    {
+      "name": "Zenn Markdown Bold Formatting",
+      "description": "Zennのマークダウンでは、太字（**）の前後に半角スペースが必要です。スペースがないと太字として認識されません。",
+      "examples": {
+        "incorrect": "を**チャットボット**として",
+        "correct": "を **チャットボット** として"
+      }
+    }
+  ]
+}
