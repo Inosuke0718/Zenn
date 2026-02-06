@@ -10,7 +10,7 @@ published: true
 
 ## はじめに
 
-Google の「Stitch」は、テキストや画像から Web/モバイルの UI とフロントエンドコードを数分で生成する AI デザインツールです。アイデア出しから実装初動までを一気通貫で短縮できるのが特徴で、最新アップデートで提案品質やワークフロー連携が大幅に改善されて、実務でも使いやすくなってきました。
+Google の「Stitch」（[https://stitch.withgoogle.com/](https://stitch.withgoogle.com/)）は、テキストや画像から Web/モバイルの UI とフロントエンドコードを数分で生成する AI デザインツールです。アイデア出しから実装初動までを一気通貫で短縮できるのが特徴で、最新アップデートで提案品質やワークフロー連携が大幅に改善されて、実務でも使いやすくなってきました。
 このレベルを一発のプロンプト AI が作れるようになったのすごくないですか？
 ![alt text](https://github.com/Inosuke0718/Zenn/blob/main/images/image-4.png?raw=true)
 
