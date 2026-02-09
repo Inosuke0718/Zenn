@@ -3,7 +3,7 @@ title: "Tailwind CSSがなぜ人気なのか＆Node.jsなしで今すぐ始め�
 emoji: "🌊"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["tailwindcss", "css", "frontend", "beginner"]
-published: false
+published: true
 ---
 
 # はじめに
