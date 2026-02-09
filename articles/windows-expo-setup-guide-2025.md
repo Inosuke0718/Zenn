@@ -1,5 +1,5 @@
 ---
-title: "【2025年版】WindowsでExpo (React Native) 環境構築完全ガイド 〜JDKの罠とエミュレータ設定まで〜"
+title: "WindowsでExpo (React Native) 環境構築完全ガイド 〜JDKの罠とエミュレータ設定まで〜"
 emoji: "🚀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["reactnative", "expo", "androidstudio", "windows", "環境構築"]

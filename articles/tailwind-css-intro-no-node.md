@@ -8,7 +8,7 @@ published: true
 
 # はじめに
 
-近年、フロントエンド開発のデファクトスタンダードになりつつある **Tailwind CSS** 。
+近年、フロントエンド開発のスタンダードになりつつある **Tailwind CSS** 。
 「クラス名が長くなるだけでしょ？」「Bootstrapでよくない？」と思っている方に向けて、なぜこれほど人気なのか、その理由と具体的な使い方をサクッと解説します。
 
 ## 1. Tailwind CSSってなんで人気なの？
@@ -64,7 +64,6 @@ Tailwindの数値は、基本的に **「1単位 = 0.25rem (4px)」** のルー�
 ```
 
 ![Tailwind CSS の余白比較（p-1 vs p-10）](https://github.com/Inosuke0718/Zenn/blob/main/images/tailwind-padding.png?raw=true)
-
 
 ## 4. Node.jsなくても使えるよ（Play CDN）
 
