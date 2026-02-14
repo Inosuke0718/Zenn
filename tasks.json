@@ -6,6 +6,13 @@
       "description": "「【2026年最新】エンジニアが入れるべきMCPサーバー厳選まとめ」の記事を articles/mcp-servers-2026.md として作成する",
       "status": "completed",
       "completed": true
+    },
+    {
+      "id": 2,
+      "title": "Expo Google Play Store公開ガイド記事の作成",
+      "description": "「【2026年版】Expo React NativeアプリをGoogle Play Storeに公開する完全ガイド」の記事を articles/expo-google-play-guide-2026.md として作成する",
+      "status": "pending",
+      "completed": false
     }
   ]
 }
