@@ -1,0 +1,11 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Zenn記事の作成",
+      "description": "「【2026年最新】エンジニアが入れるべきMCPサーバー厳選まとめ」の記事を articles/mcp-servers-2026.md として作成する",
+      "status": "completed",
+      "completed": true
+    }
+  ]
+}
