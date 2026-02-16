@@ -13,6 +13,20 @@
       "description": "「【2026年版】Expo React NativeアプリをGoogle Play Storeに公開する完全ガイド」の記事を articles/expo-google-play-guide-2026.md として作成する",
       "status": "pending",
       "completed": false
+    },
+    {
+      "id": 3,
+      "title": "MCP設定ファイルの修正",
+      "description": "c:\\Users\\takai\\.gemini\\antigravity\\mcp_config.json のJSON構造エラー（重複したmcpServersキー）を修正する",
+      "status": "completed",
+      "completed": true
+    },
+    {
+      "id": 4,
+      "title": "draw.ioでフローチャートを作成",
+      "description": "ユーザーの要望に応じた内容で draw.io形式（XML）のフローチャートファイルを作成する",
+      "status": "completed",
+      "completed": true
     }
   ]
 }
