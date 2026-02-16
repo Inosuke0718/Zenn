@@ -8,7 +8,7 @@ published: true
 
 最近話題の **MCP (Model Context Protocol)**、皆さんはもう使っていますか？
 
-![mcp](https://github.com/Inosuke0718/Zenn/blob/main/images/mcp.png?raw=true)
+![mcp](https://github.com/Inosuke0718/Zenn/blob/main/images/MCP.png?raw=true)
 _出典：[クラウドエース](https://cloud-ace.jp/column/detail519/)_
 
 Claude DesktopやCursor、そして最近登場したClaude Codeなど、MCP対応のAIツールが増える中で、「結局どのサーバーを入れればいいの？」と迷っている方も多いはず。
