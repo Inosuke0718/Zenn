@@ -2,8 +2,15 @@
   "tasks": [
     {
       "id": 1,
-      "title": "記事内容の更新",
-      "description": "articles/claude-code-mcp-skills-summary.md の内容を claude-code-skills-summary-corrected.md に基づいて更新する。",
+      "title": "Zenn用フロントマターの策定と挿入",
+      "description": "ai-search-optimization-2026.md の冒頭に Zenn 形式のフロントマターを追加し、1行目のタイトルと重複しないよう調整する。",
+      "status": "completed",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "title": "記事内容の微調整（リンター指摘等の修正）",
+      "description": "Zennの推奨するフォーマット（空行の調整など）に適合させる。",
       "status": "completed",
       "completed": true
     }

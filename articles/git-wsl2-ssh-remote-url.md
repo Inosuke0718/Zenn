@@ -8,7 +8,7 @@ published: false
 
 HTTPS で clone したあとに SSH 設定を終えると、「あれ、push のたびに認証が出る…？」って迷う瞬間、ありませんか？
 
-結論、**SSH 鍵を GitHub に登録しただけでは不十分**で、リポジトリ側の`origin`（リモート URL）を HTTPS→SSH に差し替えるのが決定版の手順です。
+結論、 **SSH 鍵を GitHub に登録しただけでは不十分** で、リポジトリ側の`origin`（リモート URL）を HTTPS→SSH に差し替えるのが決定版の手順です。
 
 ## 🧩 この記事でやること
 
