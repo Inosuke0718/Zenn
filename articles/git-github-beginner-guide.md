@@ -15,8 +15,6 @@ published: true
 
 この記事では、 たのむから「これだけは知っておいてほしい！」 というGitとGitHubのエッセンスをぎゅっと凝縮して解説します。
 
-![Git & GitHub Guide](https://github.com/Inosuke0718/Zenn/blob/main/images/git_github_eye_catch.png?raw=true)
-
 ---
 
 ## 🌳 Gitとは

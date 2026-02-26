@@ -3,16 +3,42 @@
     {
       "id": 1,
       "title": "Zenn用フロントマターの策定と挿入",
-      "description": "ai-search-optimization-2026.md の冒頭に Zenn 形式のフロントマターを追加し、1行目のタイトルと重複しないよう調整する。",
       "status": "completed",
       "completed": true
     },
     {
       "id": 2,
       "title": "記事内容の微調整（リンター指摘等の修正）",
-      "description": "Zennの推奨するフォーマット（空行の調整など）に適合させる。",
       "status": "completed",
       "completed": true
+    },
+    {
+      "id": 3,
+      "title": "Git/GitHub 初心者向け記事のアイキャッチ画像生成",
+      "description": "記事の冒頭に使用する、初心者にも親しみやすいモダンな画像を生成する。",
+      "status": "completed",
+      "completed": true
+    },
+    {
+      "id": 4,
+      "title": "Zenn記事の執筆と保存",
+      "description": "git-github-beginner-guide.md を作成し、Zennのスタイルガイドに従って執筆する。",
+      "status": "completed",
+      "completed": true
+    },
+    {
+      "id": 5,
+      "title": "たとえ話に関する説明の修正",
+      "description": "Git/GitHubに関する過度な比喩表現を削除し、事実ベースの分かりやすい説明へ置き換える。",
+      "status": "completed",
+      "completed": true
+    },
+    {
+      "id": 6,
+      "title": "Gitフロー図のExcalidraw生成と記事反映",
+      "description": "Excalidrawを使用してGitワークフロー（Clone, Branch, Add, Commit, Push, Merge, Pull）を可視化し、記事に挿入する。",
+      "status": "pending",
+      "completed": false
     }
   ]
 }
