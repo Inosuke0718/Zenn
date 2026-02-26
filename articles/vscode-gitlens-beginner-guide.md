@@ -1,14 +1,15 @@
 ---
-title: "【脱黒い画面】VS Code × GitLensで実現する、一番やさしいGitHub操作入門 🚀"
-emoji: "🚀"
+title: "【VS Codeだけで完結】VS Code × GitLensで実現する、やさしいGitHub操作入門 🎉"
+emoji: "🎉"
 type: "tech"
-topics: ["vscode", "git", "github", "gitlens", "初心者"]
-published: false
+topics:
+  ["vscode", "git", "github", "gitlens", "初心者", "Antigravity", "Cursor"]
+published: true
 ---
 
-# 【脱黒い画面】VS Code × GitLensで実現する、一番やさしいGitHub操作入門 🚀
+# 【VS Codeだけで完結】VS Code × GitLensで実現する、一番やさしいGitHub操作入門 🎉
 
-## 🥺 はじめに：GitHubは「怖くない」
+## はじめに：GitHubは「怖くない」
 
 「ターミナルでコマンドを叩くのが怖い…」
 「コンフリクト（競合）が起きて、コードが壊れたらどうしよう」
@@ -27,7 +28,9 @@ GitやGitHubを学び始めたとき、こんな風に迷う瞬間、ありま�
 
 [【Git頼むからこれだけは知っておけ】初心者でも迷わない！Git & GitHub の基本をサクッと解説 🌲](https://zenn.dev/imohuke/articles/git-github-beginner-guide)
 
-## 🔍 1. 準備：最強の相棒「GitLens」を入れる
+※またこの記事ではAntigravityを使って操作しています。VS Code(Cursor, Kiro, WindSurf)でも同様の操作が可能です。
+
+## 🔍 1. 準備：相棒「GitLens」を入れる
 
 まずはVS Codeに拡張機能を入れましょう。これがあるだけで、目に見えないGitの履歴がパッと見て分かるようになります。
 
@@ -38,7 +41,7 @@ GitやGitHubを学び始めたとき、こんな風に迷う瞬間、ありま�
 _画像補足：検索窓に「GitLens」と入力すると、一番上に公式のGitLensが表示されます。右下の「Install」ボタンをクリックしましょう。_
 
 :::message
-**💡 ここがポイント**
+**💡 ポイント**
 インストールすると、エディタ上のコードの横に薄い文字で「誰が・いつ・この行を書いたか」が表示されるようになります（インラインBlame機能）。
 「これ、いつ書いたコードだっけ？」が1秒で分かるようになり、開発の安心感が段違いにアップします！
 :::
