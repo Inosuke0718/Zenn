@@ -6,7 +6,7 @@ topics: ["java", "eclipse", "jsp", "servlet", "tomcat"]
 published: false
 ---
 
-![アイキャッチ](https://github.com/Inosuke0718/Zenn/blob/main/images/eclipse-jsp-servlet-eyecatch.png?raw=true)
+![アイキャッチ](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/eclipse-jsp-servlet-eyecatch.png)
 
 JavaでのWeb開発を学び始めたばかりの皆さん、開発環境を整えた後に「さて、どうやって動かせばいいんだ……？」と迷ったことはありませんか？
 
