@@ -8,7 +8,7 @@ published: true
 
 # AppleのHuman Interface Guidelinesから学ぶ、美しいWeb/UIデザインの作り方
 
-![apple-human-interface-guidelines](https://raw.githubusercontent.com/Inosuke0718/Zenn/images/apple-human-interface-guidelines/image.png)
+![apple-human-interface-guidelines](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/apple-human-interface-guidelines/image.png)
 
 「美しいデザイン」と聞くと、配色・装飾・アニメーション・余白などを思い浮かべる人が多いと思います。
 
