@@ -1,11 +1,12 @@
 ---
-
 title: "Loop Engineeringとは何か？AIエージェント時代の「プロンプトの次」を整理する"
 emoji: "🔁"
 type: "tech"
 topics: ["AI", "ClaudeCode", "LLM", "Agent", "LoopEngineering"]
 published: true
-----------------
+---
+
+![Loop Engineering](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/loop-engineering/hero.png)
 
 ## はじめに
 
@@ -185,6 +186,8 @@ Loop Engineeringは、人間の関与度によって大きく4つに分けて考
 
 という流れを回します。
 
+![ターン駆動ループ](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/loop-engineering/turn-based-loop.png)
+
 たとえば、
 
 ```text
@@ -262,6 +265,8 @@ AIは「いい感じ」の判断が苦手です。
 ## ② ゴール駆動ループ
 
 ゴール駆動ループは、最終目標をAIに渡し、その達成まで試行錯誤させるループです。
+
+![ゴール駆動ループ](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/loop-engineering/goal-based-loop.png)
 
 たとえば、
 
@@ -470,6 +475,8 @@ AIエージェント起動
 > AIを含んだ小さな運用システムを作る
 
 に近いです。
+
+![プロアクティブループ](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/loop-engineering/proactive-loop.png)
 
 ### 自律駆動ループの停止条件
 
