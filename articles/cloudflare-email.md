@@ -8,6 +8,7 @@ published: true
 
 # お名前.comで取得した独自ドメインメールを無料で使う方法【Cloudflare Email Routing + Gmail】
 
+![alt text](image.png)
 ## はじめに
 
 独自ドメインを取得すると、次にやりたくなるのが、
