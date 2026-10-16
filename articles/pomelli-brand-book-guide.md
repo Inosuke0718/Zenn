@@ -6,6 +6,8 @@ topics: ["google", "ai", "pomelli", "個人開発", "デザイン"]
 published: true
 ---
 
+![Pomelliのトップページ](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/pomelli-guide/pomelli-top.png)
+
 「このサイト、雰囲気が好きだな。どんな色や言葉を使っているんだろう？」
 
 そんなときに試してみたいのが、Google Labsの **Pomelli** です。WebサイトのURLを入力すると、AIがロゴ・色・フォント・文章の雰囲気を読み取り、整理してくれます。
