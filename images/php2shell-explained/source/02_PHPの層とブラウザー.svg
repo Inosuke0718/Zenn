@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="900" viewBox="0 0 800 900" role="img" aria-labelledby="title desc">
+  <title id="title">PHPの修正対象はサーバーの中</title>
+  <desc id="desc">ブラウザーからのアクセス先であるサーバーを開いて示す。OSがPHP本体を支え、PHP本体がサイトのプログラムを動かす。今回の修正対象は中央のPHP本体。実際のプロセス構成ではなく依存関係の模式図。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" fill="#596879"/></marker>
+  </defs>
+  <rect width="800" height="900" fill="#fffdf9"/>
+  <g font-family="Arial,'Yu Gothic','Meiryo',sans-serif" fill="#233449">
+    <g stroke="#53657a" stroke-width="4" stroke-linejoin="round">
+      <rect x="85" y="30" width="175" height="108" rx="7" fill="#fff"/>
+      <path d="M85 55H260"/>
+      <path d="M102 42h1m13 0h1m13 0h1" stroke-linecap="round"/>
+      <rect x="102" y="72" width="42" height="47" fill="#eee9f8" stroke="none"/>
+      <path d="M160 78h79m-79 18h65m-65 18h79" stroke="#b6c2cb"/>
+      <path d="M85 153h175l20 13H65Z" fill="#e7edf2"/>
+    </g>
+    <text x="320" y="93" font-size="44" font-weight="700">ブラウザー</text>
+    <path d="M285 133h115v79" fill="none" stroke="#596879" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="425" y="179" font-size="32">アクセス</text>
+    <rect x="40" y="228" width="720" height="610" rx="24" fill="#f4f5f7" stroke="#bcc6ce" stroke-width="3"/>
+    <text x="400" y="286" font-size="40" font-weight="700" text-anchor="middle">サーバーの中</text>
+    <!-- Slabs express dependency: app on runtime, runtime on OS. -->
+    <g stroke="#7e8fa3" stroke-width="3" stroke-linejoin="round">
+      <path d="m90 374 45-36h575l-45 36z" fill="#e4edf1"/>
+      <path d="M90 374H665V462H90Z" fill="#fff"/>
+      <path d="m665 374 45-36v88l-45 36z" fill="#cad7df"/>
+    </g>
+    <g stroke="#5e728b" stroke-width="3" stroke-linejoin="round" fill="#f3f6f9">
+      <path d="M125 389h48l16 16v42h-64z"/>
+      <path d="M173 389v16h16" fill="none"/>
+      <path d="m146 415-9 8 9 8m20-16 9 8-9 8" fill="none"/>
+    </g>
+    <text x="220" y="411" font-size="37" font-weight="700">サイトのプログラム</text>
+    <text x="220" y="450" font-size="31" fill="#596879">WordPressなど</text>
+    <path d="M400 472v36" stroke="#596879" stroke-width="3" marker-end="url(#arrow)"/>
+    <g stroke="#b65a2c" stroke-width="3.5" stroke-linejoin="round">
+      <path d="m90 568 45-36h575l-45 36z" fill="#ffd8b5"/>
+      <path d="M90 568H665V675H90Z" fill="#fff0e1"/>
+      <path d="m665 568 45-36v107l-45 36z" fill="#efb78a"/>
+    </g>
+    <g stroke="#a14d28" stroke-width="3" fill="none">
+      <rect x="130" y="590" width="54" height="51" rx="4"/>
+      <path d="M141 579v11m16-11v11m16-11v11m-32 51v11m16-11v11m16-11v11m-54-50h11m-11 15h11m-11 15h11m54-30h11m-11 15h11m-11 15h11"/>
+    </g>
+    <text x="220" y="611" font-size="48" font-weight="700" fill="#9b4525">PHP本体</text>
+    <text x="220" y="657" font-size="37" font-weight="700" fill="#9b4525">今回の修正対象</text>
+    <path d="M400 684v32" stroke="#596879" stroke-width="3" marker-end="url(#arrow)"/>
+    <g stroke="#7b8f95" stroke-width="3" stroke-linejoin="round">
+      <path d="m90 766 45-36h575l-45 36z" fill="#cbdedc"/>
+      <path d="M90 766H665V815H90Z" fill="#e4efed"/>
+      <path d="m665 766 45-36v49l-45 36z" fill="#b0cbc6"/>
+    </g>
+    <g stroke="#477b77" stroke-width="3" fill="none">
+      <rect x="125" y="776" width="63" height="25" rx="3"/>
+      <path d="M138 788h1m12 0h1" stroke-linecap="round"/>
+    </g>
+    <text x="220" y="802" font-size="37" font-weight="700">OSなどの土台</text>
+    <text x="400" y="882" text-anchor="middle" font-size="31" font-weight="700">下の層が、上のプログラムを支える</text>
+  </g>
+</svg>

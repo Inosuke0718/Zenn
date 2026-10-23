@@ -36,7 +36,11 @@ published: false
 
 **攻撃方法だけが先に知られて、守る側がまだ更新できない時間を短くするため** です。
 
-![通常は修正と配布準備の後に公表するが、今回は漏えいで公開が1日前倒しされた流れ](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/php2shell-explained/01_%E5%85%AC%E9%96%8B%E3%81%BE%E3%81%A7%E3%81%AE%E6%AE%B5%E5%8F%96%E3%82%8A.png =720x)
+```mermaid
+flowchart TD
+    A[修正・検証] --> B[更新版の配布準備]
+    B --> C[情報を公表・更新を案内]
+```
 
 今回も、そのような調整が進んでいました。ところが、途中で情報が外に出てしまいます。
 
@@ -75,7 +79,7 @@ PHP Foundationの説明によると、10月20日に脆弱性の識別番号な�
 
 Webサイトの裏側を、大まかに3つの層で考えてみます。
 
-![アプリ、PHP本体、OSの3層のうち、今回の問題がPHP本体にあることを示す図](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/php2shell-explained/02_PHP%E3%81%AE%E3%81%A9%E3%81%AE%E5%B1%A4%E3%81%8B.png =720x)
+![ブラウザーからアクセスするサーバー内を3層に分け、サイトのプログラムを動かすPHP本体を修正対象として強調した図](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/php2shell-explained/02_PHP%E3%81%AE%E3%81%A9%E3%81%AE%E5%B1%A4%E3%81%8B.png =720x)
 
 上の層は、サイトを作った人のプログラムです。ログイン、記事の表示、商品の購入といった処理を書きます。
 
@@ -106,8 +110,6 @@ WordPressを使っているなら、「WordPressというアプリ」と「そ�
 
 ### 1件目：作りかけの管理票を、完成済みだと思って使う
 
-![書類でいっぱいの机と、まだ書きかけの管理票を確認する担当者](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/php2shell-explained/03_%E6%9B%B8%E3%81%8D%E3%81%8B%E3%81%91%E3%81%AE%E7%AE%A1%E7%90%86%E7%A5%A8.png =480x)
-
 担当者が、机の上の書類を管理するための「管理票」を作っています。
 
 ところが、記入途中で机がいっぱいになり、作業が強制終了してしまいました。管理票には、まだ正しく記入されていない項目が残っています。
@@ -116,7 +118,7 @@ WordPressを使っているなら、「WordPressというアプリ」と「そ�
 
 これが1件目のイメージです。
 
-![内部データの準備中にメモリ不足となり、後始末が不完全なデータを使う流れ](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/php2shell-explained/04_%E4%BD%9C%E3%82%8A%E3%81%8B%E3%81%91%E3%81%AE%E6%83%85%E5%A0%B1%E3%82%92%E4%BD%BF%E3%81%86%E6%AC%A0%E9%99%A5.png =720x)
+![管理票の作成中、机がいっぱいになって中断し、空欄が残った同じ管理票を片付け担当が使ってしまう3コマの図](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/php2shell-explained/04_%E4%BD%9C%E3%82%8A%E3%81%8B%E3%81%91%E3%81%AE%E6%83%85%E5%A0%B1%E3%82%92%E4%BD%BF%E3%81%86%E6%AC%A0%E9%99%A5.png =720x)
 
 実際のPHPでも、メモリ不足で処理を途中から抜けたとき、準備途中の内部データが不正な状態で残る場合がありました。
 
@@ -128,8 +130,6 @@ WordPressを使っているなら、「WordPressというアプリ」と「そ�
 
 ### 2件目：片付けた場所への古いメモが、次の仕事でも残る
 
-![古いメモにある紫の書類を探す担当者と、すでに別の書類が入っているトレー](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/php2shell-explained/05_%E5%8F%A4%E3%81%84%E3%83%A1%E3%83%A2%E3%81%A8%E5%88%A5%E3%81%AE%E6%9B%B8%E9%A1%9E.png =480x)
-
 こちらは、ある仕事が終わり、書類を片付けた後の話です。
 
 書類はもうないのに、 **「必要な書類は机の右端にある」という古いメモだけが残ってしまう。**
@@ -138,7 +138,9 @@ WordPressを使っているなら、「WordPressというアプリ」と「そ�
 
 それを前の仕事の書類だと思って扱うと、処理がおかしくなります。
 
-![前のリクエストのメモリを解放した後、同じ担当が古い参照を使う流れ](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/php2shell-explained/06_%E5%8F%A4%E3%81%84%E5%8F%82%E7%85%A7%E3%82%92%E4%BD%BF%E3%81%86%E6%AC%A0%E9%99%A5.png =720x)
+![同じ担当者が、トレーAの紫の書類を片付けた後も古いメモを残し、次の仕事で別のオレンジの書類に触れる3コマの図](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/php2shell-explained/06_%E5%8F%A4%E3%81%84%E5%8F%82%E7%85%A7%E3%82%92%E4%BD%BF%E3%81%86%E6%AC%A0%E9%99%A5.png =720x)
+
+トレーAは「メモリ上の同じ場所」、残ったメモは「古い参照」です。図では、その場所が別の書類に使い回された場合を描いています。
 
 PHPの説明に戻すと、あるリクエストで使ったメモリを解放した後も、その場所を指す情報が内部に残り、後のリクエストで使われる問題です。
 
@@ -162,7 +164,11 @@ PHPの説明に戻すと、あるリクエストで使ったメモリを解放�
 
 **不具合を起こすきっかけを作ることと、そこから狙いどおりのコードを実行させることには、大きな差があります。**
 
-![不具合の入口に到達することと、狙ったコードを実行させることの難しさの違い](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/php2shell-explained/07_%E3%81%8D%E3%81%A3%E3%81%8B%E3%81%91%E3%81%A8%E4%B9%97%E3%81%A3%E5%8F%96%E3%82%8A%E3%81%AE%E9%81%95%E3%81%84.png =720x)
+```mermaid
+flowchart TD
+    A[不具合の発生] --> B[異常終了など]
+    A -. 条件と制御が必要 .-> C[コード実行]
+```
 
 1件目について、公式資料は、外部からの入力によってメモリ不足を引き起こせる複数の経路を説明しています。問題の入口に到達するだけなら、その先の悪用に比べて容易な経路があります。
 
@@ -205,7 +211,11 @@ CVSSは、脆弱性の深刻さを共通の基準で表す指標です。「自�
 
 ## 利用者と管理者、それぞれがすること
 
-![一般利用者は案内を確認し、管理者はPHPの修正と不審な兆候を確認するという対応の違い](https://raw.githubusercontent.com/Inosuke0718/Zenn/main/images/php2shell-explained/08_%E7%AB%8B%E5%A0%B4%E3%81%94%E3%81%A8%E3%81%AE%E5%AF%BE%E5%BF%9C.png =720x)
+| 自分の立場 | まず確認すること |
+|---|---|
+| サイトやサービスを使う人 | サービスからの案内 |
+| 自分でサイトを公開している人 | サーバー事業者の修正対応、または自分で管理するPHPへの修正適用 |
+| サーバーを管理する人 | 稼働中のPHPへの修正反映と、不審なアクセス・改ざんの兆候 |
 
 ### 一般の利用者：サービスからの案内を確認する
 
